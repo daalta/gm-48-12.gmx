@@ -54,6 +54,15 @@ dead=3;
 vsp = 0;
 hsp = 0;
 state = idle;
+
+
+//Entity Stats
+
+statToHeavyToJump = false;
+
+
+//unused stats
+//statImmuneToWorld = false;
 </string>
           </argument>
         </arguments>
@@ -103,7 +112,7 @@ state = idle;
 
 
 //launch
-if(global.lunch) 
+if(global.lunch &amp;&amp; !statToHeavyToJump) 
 {
     leftCollision=collision_point(bbox_left,bbox_bottom+1,oPlatformJump,0,0);
     rightCollision=collision_point(bbox_right,bbox_bottom+1,oPlatformJump,0,0);
