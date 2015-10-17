@@ -11,11 +11,6 @@
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
-  <objects name="objects"/>
-    <sprite>sprites\sPlayer</sprite>
-  </sprites>
-  <backgrounds name="background"/>
-  <paths name="paths"/>
   <objects name="objects">
     <objects name="Control">
       <object>objects\oControl</object>
