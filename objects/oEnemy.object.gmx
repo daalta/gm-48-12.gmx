@@ -41,7 +41,7 @@
             <kind>1</kind>
             <string>walkSpeed = 1;
 walkDirection = 1;
-hsp = walkSpeed
+hsp = walkSpeed;
 </string>
           </argument>
         </arguments>
