@@ -25,6 +25,7 @@
   <NewExtensions/>
   <sounds name="sound">
     <sound>sound\soundLaunch</sound>
+    <sound>sound\musicIntro</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sPlatformNormal</sprite>
@@ -47,7 +48,6 @@
   <scripts name="scripts">
     <script>scripts\spawnEnemy.gml</script>
   </scripts>
-  <fonts name="fonts"/>
   <objects name="objects">
     <objects name="Control">
       <object>objects\oControl</object>
@@ -76,10 +76,17 @@
     <object>objects\oExplosion</object>
     <object>objects\oSpawner</object>
     <object>objects\oDeathExplosion</object>
+    <object>objects\oIntro</object>
+    <object>objects\oDummyPlayer</object>
+    <object>objects\oDummyEnemy</object>
   </objects>
+  <timelines name="timelines">
+    <timeline>timelines\timelineIntro</timeline>
+  </timelines>
   <rooms name="rooms">
     <room>rooms\rLevel0</room>
     <room>rooms\room0</room>
+    <room>rooms\rIntro</room>
   </rooms>
   <constants number="7">
     <constant name="LAUNCHSPEED">-16</constant>

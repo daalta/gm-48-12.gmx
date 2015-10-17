@@ -211,6 +211,11 @@ spawner0=noone;
 spawner1=noone;
 
 spawnTimer=0 //delay between spawns
+
+if(room=rIntro)
+{
+    timeline_index=timelineIntro;
+}
 </string>
           </argument>
         </arguments>
