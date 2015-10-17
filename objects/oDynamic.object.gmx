@@ -29,8 +29,8 @@
 hsp = 0;
 
 var sprite = object_get_mask(self);
-entityCollisionSizeX = sprite_get_width(sprite);
-entityCollisionSizeY = sprite_get_height(sprite);
+maskWidth = sprite_get_width(sprite);
+maskHeight = sprite_get_height(sprite);
 </string>
           </argument>
         </arguments>
@@ -66,20 +66,24 @@ if(global.launch)
 vsp += GRAVITY;
 
 //Collide with ground
-if(vsp &gt;= 0) 
+if(vsp &gt; 0) 
 {
-    //left and right collision points
-    var ground1 = collision_point(x - entityCollisionSizeX/2, y - 1, self, false, true);
-    var ground2 = collision_point(x + entityCollisionSizeX/2, y - 1, self, false, true);
-    if(ground1 == oStatic || ground2 == oStatic) {
-        //stop falling
-        vsp = 0;
+    //unten kollision mit boden
+    collider=place_meeting(x,y+vsp,oStatic);
+    if(collider != 0) 
+        {
+        vsp=0 //Because we collided with the ground!
+        //Move until ground is perfectly touched
+        while(place_meeting(x,y+vsp+1,oStatic)=0)
+            {
+            vsp++;
+            }
     }
 }
 
 //Move
 x += hsp;
-y += vsp;
+y+=vsp;
 </string>
           </argument>
         </arguments>

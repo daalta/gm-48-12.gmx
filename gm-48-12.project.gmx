@@ -37,9 +37,7 @@
       </objects>
     </objects>
   </objects>
-  <rooms name="rooms">
-    <room>rooms\room0</room>
-  </rooms>
+  <rooms name="rooms"/>
   <constants number="5">
     <constant name="LAUNCHSPEED">-20</constant>
     <constant name="KEYLEFT">vk_left</constant>
