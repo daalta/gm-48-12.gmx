@@ -26,12 +26,13 @@
           <argument>
             <kind>1</kind>
             <string>///Deklariert die Statuswerte
-enum state 
+enum platformState 
 {
     launching,
     idle
 }
-platformState = state.idle;
+platState = platformState.idle;
+
 </string>
           </argument>
         </arguments>
@@ -57,7 +58,7 @@ platformState = state.idle;
             <string>///Launches Everything
 if (global.launch)
 {
-    platformState = state.launching;
+    platState = platformState.launching;
 }
 </string>
           </argument>
@@ -79,7 +80,7 @@ if (global.launch)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (state=launching)
+            <string>if (platState = platformState.launching)
 {
     var i;
     for (i = 0; i &lt; 5; i+=1)
@@ -110,7 +111,30 @@ if (global.launch)
           <argument>
             <kind>1</kind>
             <string>///Setzt den Status zurück
-platformState = state.idle;
+platState = platformState.idle;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="32">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>global.launch=true;
 </string>
           </argument>
         </arguments>
