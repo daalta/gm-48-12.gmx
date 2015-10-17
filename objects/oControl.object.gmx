@@ -25,8 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Set global.launch to false
-
+            <string>///set global.lunch to false
 global.lunch=false;
 </string>
           </argument>
@@ -50,7 +49,15 @@ global.lunch=false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>switch(ds_stack_pop(enemyStack))
+{
+    case 0:
+    show_debug_message("!!!!!!!!!!!!!!!HOLY SHIT i just found a 0 in the enemyStack.");
+    break;
+    case 1:
+    
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -114,10 +121,10 @@ global.lunch=false;
 //...
 //20=20 seconds
 
-ini_open("spawns.ini");
+ini_open("levelData.ini");
 
 //Read the section declared in the argument
-sectionToRead="rLevel0";
+sectionToRead=room_get_name(room);
 
 //count number of spawned enemies.
 enemyNumber=0;
@@ -130,6 +137,46 @@ while(ds_stack_top(enemyStack)!=99)//read actual file, line by line per level
     enemyNumber++;
     }
 ini_close();
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Spawns teleporters and remember their location
+
+ini_open("levelData.ini");
+
+//sections are titled after room names. we need the room name.
+roomName=room_get_name(room);
+
+//get spawner locations (only 1 may exist!!)
+spawnerLocation0x=ini_read_real(roomName,"spawnerLocation0x",-1);
+spawnerLocation0y=ini_read_real(roomName,"spawnerLocation0x",-1);
+spawnerLocation1x=ini_read_real(roomName,"spawnerLocation0x",-1);
+spawnerLocation1y=ini_read_real(roomName,"spawnerLocation0x",-1);
+
+spawner0=instance_create(spawnerLocation0x,spawnerLocation0y,oSpawner);
+
+//check if spawnerLocation für seconds spawner are valid
+if(spawnerLocation1x!=-1)
+    {
+    spawner1=instance_create(spawnerLocation1x,spawnerLocation1y,oSpawner);
+    }
 </string>
           </argument>
         </arguments>
@@ -157,6 +204,9 @@ global.lunch=false;
 
 //a stack to save all enemies to
 enemyStack=ds_stack_create()
+
+spawner0=noone;
+spawner1=noone;
 </string>
           </argument>
         </arguments>
