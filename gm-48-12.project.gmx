@@ -60,6 +60,7 @@
     <objects name="Control">
       <object>objects\oControl</object>
       <object>objects\oMainMenu</object>
+      <object>objects\oControlTest</object>
     </objects>
     <objects name="Dynamic">
       <object>objects\oDynamic</object>

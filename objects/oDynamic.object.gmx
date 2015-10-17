@@ -137,7 +137,7 @@ if(vsp &gt; 0)
 {
     //unten kollision mit boden
     collider=place_meeting(x, y + vsp, oStatic);
-    if(collider != 0) 
+    if(collider) 
     {
         vsp = 0; //Because we collided with the ground!
         if(state == falling) {

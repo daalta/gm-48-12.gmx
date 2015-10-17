@@ -2,7 +2,7 @@
 <object>
   <spriteName>sControl</spriteName>
   <solid>0</solid>
-  <visible>-1</visible>
+  <visible>0</visible>
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
@@ -25,20 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Init Values
-currentButton = 0;
-buttonCount = 2;
+            <string>///INIT Global Vars
 
-firstFrame = 1;
-lastFrame = 4;
-imageIndex = 0;
-imageSpeed = 0.3;
+global.lunch = false;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="0">
+    <event eventtype="3" enumb="2">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -55,109 +50,48 @@ imageSpeed = 0.3;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Render GUI
+            <string>///Reset Lunch var
 
-//Animation
-imageIndex += imageSpeed;
-
-//Loope nur die Bilder, die von firstFrame zu lastFrame reichen
-if(image_index &lt; firstFrame || image_index &gt;= lastFrame + 1)
-{
-    image_index = firstFrame;
-}
-
-var xPos = room_width / 2 - 128;
-
-drawGuiButtonAnim(xPos, 100, imageIndex, "Play Game", currentButton == 0);
-drawGuiButtonAnim(xPos, 180, imageIndex, "Leave", currentButton == 1);
-
+global.lunch = false;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="9" enumb="40">
+    <event eventtype="9" enumb="82">
       <action>
         <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
+        <id>223</id>
+        <kind>0</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_current_room</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+    </event>
+    <event eventtype="9" enumb="27">
+      <action>
+        <libid>1</libid>
+        <id>224</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_another_room</functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>1</kind>
-            <string>///Go Down
-currentButton = (currentButton + 1) % buttonCount;
-imageIndex = firstFrame;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="38">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Go Up
-currentButton--;
-if(currentButton &lt; 0) {
-    currentButton = buttonCount - 1;
-}
-imageIndex = firstFrame;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="13">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Do somthing on Button Action
-
-switch(currentButton) {
-    case 0:
-        room_goto(rLevel0);
-        instance_destroy();
-        break;
-    case 1:
-        game_end();
-        break;
-}
-</string>
+            <kind>11</kind>
+            <room>rMainMenu</room>
           </argument>
         </arguments>
       </action>

@@ -182,10 +182,10 @@ if(collider != noone) {
 
 //Kill player
 if(state != dead &amp;&amp; !isJumpedOn &amp;&amp; !statHarmless) {
-var collider = place_meeting(x, y, oPlayer);
-    if(collider != 0) {
-        if(collider.bbox_bottom - ENEMY_COLLISION_THRESHOLD * 2 &gt; bbox_top) {
-            collider.state = dead;
+var collider2 = instance_place(x, y, oPlayer);
+    if(collider2 != noone) {
+        if(collider2.bbox_bottom - ENEMY_COLLISION_THRESHOLD * 2 &gt; bbox_top) {
+            collider2.state = dead;
             //TODO death
             game_restart();
         }
