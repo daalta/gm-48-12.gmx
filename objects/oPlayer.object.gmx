@@ -185,7 +185,6 @@ if(keyboard_check_pressed(KEYLAUNCH))
     rightCollision=collision_point(bbox_right,bbox_bottom+1,oPlatformJump,0,0);
     if(rightCollision!=noone||leftCollision!=noone)
         {
-        show_debug_message("lunch set to true");
         global.lunch=true;
         }
     }
