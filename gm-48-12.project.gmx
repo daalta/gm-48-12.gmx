@@ -38,11 +38,12 @@
     </objects>
   </objects>
   <rooms name="rooms"/>
-  <constants number="4">
+  <constants number="5">
     <constant name="LAUNCHSPEED">-20</constant>
     <constant name="KEYLEFT">vk_left</constant>
     <constant name="KEYRIGHT">vk_right</constant>
     <constant name="KEYLAUNCH">vk_space</constant>
+    <constant name="GRAVITY">1</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>
