@@ -8,6 +8,43 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Init spawn system and global vars
+
+//launch all enemies?
+global.lunch=false;
+
+
+//a stack to save all enemies to.
+//IS ACUTALLY A QUEUE
+//BECAUSE DANIEL MAKES MISTAKES SOMETIMES
+enemyStack=ds_queue_create()
+
+spawner0=noone;
+spawner1=noone;
+
+spawnTimer=0 //delay between spawns
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="2">
       <action>
         <libid>1</libid>
@@ -80,6 +117,30 @@ else if(spawnTimer!=-1)spawnTimer--
           <argument>
             <kind>1</kind>
             <string>game_restart();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="5" enumb="27">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// GOTO MainMenu
+room_goto(rMainMenu);
 </string>
           </argument>
         </arguments>
@@ -239,7 +300,7 @@ if(room=rIntro)
           <argument>
             <kind>1</kind>
             <string>if(keyboard_check(vk_alt)) {
-room_goto_next();
+room_goto(room0);
 }
 </string>
           </argument>

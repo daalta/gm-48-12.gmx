@@ -3,7 +3,7 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="2" name="datafiles">
+  <datafiles number="3" name="datafiles">
     <datafile>
       <name>levelData.ini</name>
       <exists>-1</exists>
@@ -40,17 +40,28 @@
     <sprite>sprites\sWall</sprite>
     <sprite>sprites\sEnemyHelmet</sprite>
     <sprite>sprites\sEnemyHeavy</sprite>
+    <sprites name="Gui">
+      <sprite>sprites\sButton</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\background1</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
+    <script>scripts\getSpawnsFromIni.gml</script>
+    <script>scripts\drawGuiButtonAnim.gml</script>
+    <script>scripts\drawGuiButton.gml</script>
     <script>scripts\spawnEnemy.gml</script>
   </scripts>
+  <fonts name="fonts">
+    <font>fonts\fontMain</font>
+  </fonts>
   <objects name="objects">
     <objects name="Control">
       <object>objects\oControl</object>
+      <object>objects\oMainMenu</object>
+      <object>objects\oControlTest</object>
     </objects>
     <objects name="Dynamic">
       <object>objects\oDynamic</object>
@@ -84,6 +95,7 @@
     <timeline>timelines\timelineIntro</timeline>
   </timelines>
   <rooms name="rooms">
+    <room>rooms\rMainMenu</room>
     <room>rooms\rLevel0</room>
     <room>rooms\room0</room>
     <room>rooms\rIntro</room>

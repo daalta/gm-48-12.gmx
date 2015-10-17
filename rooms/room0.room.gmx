@@ -52,7 +52,6 @@
   </views>
   <instances>
     <instance objName="oPlayer" x="384" y="64" name="inst_3619E76B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oControl" x="192" y="128" name="inst_B0B6995A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oPlatformNormal" x="288" y="288" name="inst_8472E236" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oPlatformNormal" x="448" y="352" name="inst_D6E2400E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oPlatformNormal" x="704" y="544" name="inst_F86A21E4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -61,6 +60,7 @@
     <instance objName="oPlatformNormal" x="256" y="640" name="inst_9104D479" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oExplosion" x="96" y="256" name="inst_05B9FD5A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oEnemyHelmet" x="352" y="224" name="inst_3CEAD575" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oControlTest" x="224" y="160" name="inst_1451B655" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
