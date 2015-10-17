@@ -8,7 +8,7 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="3" enumb="1">
+    <event eventtype="3" enumb="2">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,11 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Launch key
+            <string>///Set global.launch to false
 
-global.launch=false;
-
-global.launch=keyboard_check_pressed(KEYLAUNCH);
+global.lunch=false;
 </string>
           </argument>
         </arguments>
@@ -75,7 +73,7 @@ global.launch=keyboard_check_pressed(KEYLAUNCH);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.launch=false;
+            <string>global.lunch=false;
 </string>
           </argument>
         </arguments>

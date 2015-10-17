@@ -43,8 +43,6 @@
 walkSpeed=7;
 xscale=1; //Spieler guckt zu anfang nach rechts.
 image_index=0;
-
-state=idle;
 </string>
           </argument>
         </arguments>
@@ -140,19 +138,54 @@ move = 0;
 //Testenchecks bewegung
 if (keyboard_check(KEYLEFT))
 {
-    state=moving;
+    if state==idle state=moving;
     move--;
 }
 
 if (keyboard_check(KEYRIGHT))
 {
-    state=moving;
+    if state==idle state=moving;
     move++;
 }
 
-if move=0 state=idle //wenn wir uns nicht bewegen, idle state!
+if move==0&amp;&amp;state==moving state=idle //wenn wir uns nicht bewegen, idle state!
 
     
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Check platforms below.
+//Gamemaker only return 1 object it collides with.
+//We need to make sure it tells us if we are colliding with a jump platform.
+
+if(keyboard_check_pressed(KEYLAUNCH))
+    {
+    show_debug_message("SPACE PRESSED");
+    leftCollision=collision_point(bbox_left,bbox_bottom+1,oPlatformJump,0,0);
+    rightCollision=collision_point(bbox_right,bbox_bottom+1,oPlatformJump,0,0);
+    if(rightCollision!=noone||leftCollision!=noone)
+        {
+        show_debug_message("lunch set to true");
+        global.lunch=true;
+        }
+    }
 </string>
           </argument>
         </arguments>
@@ -179,27 +212,6 @@ if move=0 state=idle //wenn wir uns nicht bewegen, idle state!
 hsp=(walkSpeed*move)
 
 
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Animation
 </string>
           </argument>
         </arguments>
@@ -272,29 +284,6 @@ if(collider != 0) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///debug text
-
-draw_text(x+110,y,string(image_index));
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
             <string>///Animation
  
 if(move!=0)
@@ -331,6 +320,26 @@ if(image_index&lt;firstFrame||lastFrame+1&lt;=image_index)
  
 draw_sprite_ext(sPlayer,image_index,x,y,xscale,1,0,c_white,1);
 </string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string></string>
           </argument>
         </arguments>
       </action>

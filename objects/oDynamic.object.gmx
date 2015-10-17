@@ -25,9 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///States
-
-idle=0;
+            <string>idle=0;
 moving=1;
 falling=2;
 dead=3;
@@ -81,7 +79,7 @@ state = idle;
 
 
 //launch
-if(global.launch) 
+if(global.lunch) 
 {
     vsp = LAUNCHSPEED;
     state = falling;

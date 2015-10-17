@@ -56,7 +56,7 @@ platState = platformState.idle;
           <argument>
             <kind>1</kind>
             <string>///Launches Everything
-if (global.launch)
+if (global.lunch)
 {
     platState = platformState.launching;
 }

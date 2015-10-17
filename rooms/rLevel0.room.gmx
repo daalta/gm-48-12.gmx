@@ -6,7 +6,7 @@
   <vsnap>32</vsnap>
   <hsnap>32</hsnap>
   <isometric>0</isometric>
-  <speed>30</speed>
+  <speed>60</speed>
   <persistent>0</persistent>
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
@@ -54,19 +54,15 @@
     <instance objName="oPlatformNormal" x="0" y="640" name="inst_56113FA8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oPlatformNormal" x="160" y="640" name="inst_52C3DC49" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oPlatformNormal" x="320" y="640" name="inst_DD4F66B4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oPlatformNormal" x="480" y="640" name="inst_7BF32F7C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oPlatformNormal" x="800" y="640" name="inst_1B5A73D2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oPlatformNormal" x="960" y="640" name="inst_A243C81C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oPlatformNormal" x="1120" y="640" name="inst_FD78DC07" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oPlatformNormal" x="0" y="416" name="inst_1FF364D2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oPlatformNormal" x="160" y="416" name="inst_13286745" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oPlatformNormal" x="320" y="416" name="inst_DF060339" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oPlatformNormal" x="640" y="416" name="inst_ADD06B8D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oPlatformNormal" x="800" y="416" name="inst_91459A86" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oPlatformNormal" x="1120" y="416" name="inst_2FC61AE0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oPlatformNormal" x="0" y="256" name="inst_1EB3066E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oPlatformNormal" x="160" y="256" name="inst_5BD536FC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oPlatformNormal" x="640" y="256" name="inst_5CBF3F71" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oPlatformNormal" x="480" y="256" name="inst_D7D7D6D4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oPlatformNormal" x="800" y="256" name="inst_B02F7925" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oPlatformNormal" x="960" y="256" name="inst_C8D03B2E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -82,6 +78,10 @@
     <instance objName="oEnemyBasic" x="256" y="352" name="inst_0597885A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oPlatformNormal" x="0" y="640" name="inst_419AD561" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="oPlatformNormal" x="1248" y="640" name="inst_AD708D29" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="oPlatformJump" x="320" y="256" name="inst_A900B432" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oPlatformJump" x="640" y="416" name="inst_038999C3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oPlatformJump" x="480" y="640" name="inst_E13C174E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oPlatformJump" x="640" y="640" name="inst_9214AE74" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
