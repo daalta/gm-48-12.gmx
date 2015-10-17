@@ -9,6 +9,7 @@
     <sprite>sprites\sPlatformNormal</sprite>
     <sprite>sprites\sPlatformJump</sprite>
     <sprite>sprites\sLaunch</sprite>
+    <sprite>sprites\sEnemyBasic</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -23,6 +24,7 @@
       </objects>
       <objects name="Enemy">
         <object>objects\oEnemy</object>
+        <object>objects\oEnemyBasic</object>
       </objects>
     </objects>
     <objects name="Static">
