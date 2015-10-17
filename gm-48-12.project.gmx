@@ -38,8 +38,9 @@
   <rooms name="rooms">
     <room>rooms\room1</room>
   </rooms>
-  <constants number="1">
+  <constants number="2">
     <constant name="LAUNCHSPEED">20</constant>
+    <constant name="GRAVITY">1</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

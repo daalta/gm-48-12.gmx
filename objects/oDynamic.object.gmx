@@ -62,13 +62,16 @@ if(global.launch)
     vsp = LAUNCHSPEED;
 }
 
+//gravity
+vsp += GRAVITY;
+
 //Collide with ground
 if(vsp &gt;= 0) 
 {
     //left and right collision points
     var ground1 = collision_point(x - entityCollisionSizeX/2, y - 1, self, false, true);
     var ground2 = collision_point(x + entityCollisionSizeX/2, y - 1, self, false, true);
-    if(ground1 != noone || ground2 != noone) {
+    if(ground1 == oStatic || ground2 == oStatic) {
         //stop falling
         vsp = 0;
     }
