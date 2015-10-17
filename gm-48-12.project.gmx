@@ -13,6 +13,7 @@
     <sprite>sprites\sEnemyBasic</sprite>
     <sprite>sprites\sControl</sprite>
     <sprite>sprites\sExplosion</sprite>
+    <sprite>sprites\sSpawner</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -39,6 +40,7 @@
       </objects>
     </objects>
     <object>objects\oExplosion</object>
+    <object>objects\oSpawner</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rLevel0</room>

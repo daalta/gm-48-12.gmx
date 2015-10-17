@@ -73,16 +73,16 @@ lastFrame=0;
 
 //Idle: standing still
 idleFirstFrame=0;
-idleLastFrame=0;
+idleLastFrame=2;
 
 //Moving: Walking left or right
-movingFirstFrame=1;
-movingLastFrame=3;
+movingFirstFrame=8;
+movingLastFrame=16;
 
 
 //Falling: Not colliding with any ground currently
-fallingFirstFrame=4;
-fallingLastFrame=4;
+fallingFirstFrame=2;
+fallingLastFrame=2;
 </string>
           </argument>
         </arguments>
@@ -299,13 +299,13 @@ switch(state)
     case idle:
         firstFrame=idleFirstFrame;
         lastFrame=idleLastFrame;
-        image_speed=0.175
+        image_speed=0.05
         image_angle=0;
     break;
     case moving:
         firstFrame=movingFirstFrame;
         lastFrame=movingLastFrame;
-        image_speed=0.25
+        image_speed=0.5
         image_angle=0;
     break;
     case falling:
