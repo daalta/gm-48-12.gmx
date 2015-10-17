@@ -27,6 +27,10 @@
             <kind>1</kind>
             <string>vsp = 0;
 hsp = 0;
+
+var sprite = object_get_mask(self);
+entityCollisionSizeX = sprite_get_width(sprite);
+entityCollisionSizeY = sprite_get_height(sprite);
 </string>
           </argument>
         </arguments>
@@ -50,32 +54,29 @@ hsp = 0;
           <argument>
             <kind>1</kind>
             <string>///Move object
+
+
+//launch
+if(global.launch) 
+{
+    vsp = LAUNCHSPEED;
+}
+
+//Collide with ground
+if(vsp &gt;= 0) 
+{
+    //left and right collision points
+    var ground1 = collision_point(x - entityCollisionSizeX/2, y - 1, self, false, true);
+    var ground2 = collision_point(x + entityCollisionSizeX/2, y - 1, self, false, true);
+    if(ground1 != noone || ground2 != noone) {
+        //stop falling
+        vsp = 0;
+    }
+}
+
+//Move
 x += hsp;
 y += vsp;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="10">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Launch object
-vsp = LAUNCHSPEED;
 </string>
           </argument>
         </arguments>
