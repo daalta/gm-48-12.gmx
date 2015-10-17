@@ -349,7 +349,7 @@ switch(state)
     case deadCeiling:
         firstFrame=deadCeilingFirstFrame;
         lastFrame=deadCeilingLastFrame;
-        image_speed=0-25
+        image_speed=0.25
         image_angle=0
     break;
 }
@@ -362,26 +362,6 @@ if(image_index&lt;firstFrame||lastFrame+1&lt;=image_index)
  
 draw_sprite_ext(sPlayer,image_index,x,y,xscale,1,imageRotation,c_white,1);
 </string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string></string>
           </argument>
         </arguments>
       </action>
