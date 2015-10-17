@@ -43,7 +43,7 @@
 
 walkSpeed = 1;
 walkDirection = 1;
-hsp = walkSpeed
+hsp = walkSpeed;
 
 isJumpedOn = 0;
 

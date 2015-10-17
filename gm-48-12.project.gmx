@@ -5,9 +5,9 @@
   </Configs>
   <datafiles number="3" name="datafiles">
     <datafile>
-      <name>spawns.ini</name>
+      <name>levelData.ini</name>
       <exists>-1</exists>
-      <size>0</size>
+      <size>128</size>
       <exportAction>2</exportAction>
       <exportDir></exportDir>
       <overwrite>0</overwrite>
@@ -19,7 +19,7 @@
           <CopyToMask>9223372036854775807</CopyToMask>
         </Config>
       </ConfigOptions>
-      <filename>spawns.ini</filename>
+      <filename>levelData.ini</filename>
     </datafile>
   </datafiles>
   <NewExtensions/>
@@ -51,6 +51,7 @@
     <script>scripts\getSpawnsFromIni.gml</script>
     <script>scripts\drawGuiButtonAnim.gml</script>
     <script>scripts\drawGuiButton.gml</script>
+    <script>scripts\spawnEnemy.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fontMain</font>
