@@ -36,5 +36,9 @@
     <frame index="13">images\sPlayer_13.png</frame>
     <frame index="14">images\sPlayer_14.png</frame>
     <frame index="15">images\sPlayer_15.png</frame>
+    <frame index="16">images\sPlayer_16.png</frame>
+    <frame index="17">images\sPlayer_17.png</frame>
+    <frame index="18">images\sPlayer_18.png</frame>
+    <frame index="19">images\sPlayer_19.png</frame>
   </frames>
 </sprite>

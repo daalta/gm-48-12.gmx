@@ -23,7 +23,9 @@
     </datafile>
   </datafiles>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\soundLaunch</sound>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\sPlatformNormal</sprite>
     <sprite>sprites\sPlatformJump</sprite>
@@ -33,6 +35,7 @@
     <sprite>sprites\sControl</sprite>
     <sprite>sprites\sExplosion</sprite>
     <sprite>sprites\sSpawner</sprite>
+    <sprite>sprites\sRespawn</sprite>
     <sprite>sprites\sWall</sprite>
     <sprite>sprites\sEnemyHelmet</sprite>
     <sprite>sprites\sEnemyHeavy</sprite>

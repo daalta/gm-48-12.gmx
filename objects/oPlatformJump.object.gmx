@@ -33,9 +33,25 @@ enum platformState
 }
 platState = platformState.idle;
 
+image_speed=0.25
+
 </string>
           </argument>
         </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>604</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_inherited</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
       </action>
     </event>
     <event eventtype="3" enumb="0">
@@ -55,10 +71,13 @@ platState = platformState.idle;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Launches Everything
+            <string>///Launches Everything if lunch is true
+image_blend=c_white;
 if (global.lunch)
 {
+    audio_play_sound(soundLaunch,0,0);
     platState = platformState.launching;
+    image_blend=c_aqua;
 }
 </string>
           </argument>
@@ -112,29 +131,6 @@ if (global.lunch)
             <kind>1</kind>
             <string>///Setzt den Status zurück
 platState = platformState.idle;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="32">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>global.launch=true;
 </string>
           </argument>
         </arguments>
