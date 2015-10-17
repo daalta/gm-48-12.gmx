@@ -8,6 +8,7 @@
   <sprites name="sprites">
     <sprite>sprites\sPlatformNormal</sprite>
     <sprite>sprites\sPlatformJump</sprite>
+    <sprite>sprites\sLaunch</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -33,9 +34,7 @@
       </objects>
     </objects>
   </objects>
-  <rooms name="rooms">
-    <room>rooms\room1</room>
-  </rooms>
+  <rooms name="rooms"/>
   <constants number="1">
     <constant name="LAUNCHSPEED">20</constant>
   </constants>
