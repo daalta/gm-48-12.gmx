@@ -14,7 +14,9 @@
     <sprite>sprites\sControl</sprite>
     <sprite>sprites\sExplosion</sprite>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\background1</background>
+  </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
     <objects name="Control">
