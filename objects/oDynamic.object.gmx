@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-1</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -27,10 +27,6 @@
             <kind>1</kind>
             <string>vsp = 0;
 hsp = 0;
-
-var sprite = object_get_mask(self);
-maskWidth = sprite_get_width(sprite);
-maskHeight = sprite_get_height(sprite);
 </string>
           </argument>
         </arguments>
@@ -53,7 +49,7 @@ maskHeight = sprite_get_height(sprite);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Move object
+            <string>///Move object and collide
 
 
 //launch
@@ -80,6 +76,14 @@ if(vsp &gt; 0)
             }
     }
 }
+//collide with ceiling
+if(vsp &lt; 0) {
+    if(collision_line(bbox_left, bbox_top, bbox_right, bbox_top, oStatic, false, false))
+    {
+        instance_destroy();
+    }
+}
+
 
 //Move
 x += hsp;

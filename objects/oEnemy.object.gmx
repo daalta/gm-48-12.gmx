@@ -40,10 +40,69 @@
           <argument>
             <kind>1</kind>
             <string>walkSpeed = 1;
-
+walkDirection = 1;
+hsp = walkSpeed
 </string>
           </argument>
         </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Collision and movement
+
+//TODO: handle states
+
+//set speed (and direction)
+hsp = walkSpeed * walkDirection;
+
+//collide with wall to change direction
+var collider = place_meeting(x + hsp, y, oStatic);
+if(collider != 0) {
+    if(vsp == 0) {
+        //only change direction when walking
+        walkDirection = walkDirection * -1;
+    }
+    var dir = sign(hsp);
+    hsp=0 //Because we collided with the wall!
+    //Move until wall is perfectly touched
+    while(place_meeting(x + hsp + dir, y, oStatic) == 0)
+    {
+        hsp += dir;
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>604</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_inherited</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
       </action>
     </event>
   </events>
