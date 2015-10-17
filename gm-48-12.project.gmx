@@ -5,11 +5,39 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound"/>
-  <sprites name="sprites"/>
+  <sprites name="sprites">
+    <sprite>sprites\sPlayer</sprite>
+  </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
-  <objects name="objects"/>
-  <rooms name="rooms"/>
+  <objects name="objects">
+    <objects name="Control">
+      <object>objects\oControl</object>
+    </objects>
+    <objects name="Dynamic">
+      <object>objects\oDynamic</object>
+      <objects name="Player">
+        <object>objects\oPlayer</object>
+      </objects>
+      <objects name="Enemy">
+        <object>objects\oEnemy</object>
+      </objects>
+    </objects>
+    <objects name="Static">
+      <object>objects\oStatic</object>
+      <objects name="Platform">
+        <object>objects\oPlatform</object>
+        <object>objects\oPlatformJump</object>
+        <object>objects\oPlatformNormal</object>
+      </objects>
+    </objects>
+  </objects>
+  <rooms name="rooms">
+    <room>rooms\room1</room>
+  </rooms>
+  <constants number="1">
+    <constant name="LAUNCHSPEED">20</constant>
+  </constants>
   <help>
     <rtf>help.rtf</rtf>
   </help>
