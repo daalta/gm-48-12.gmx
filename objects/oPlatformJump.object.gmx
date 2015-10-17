@@ -31,7 +31,7 @@ enum state
     launching,
     idle
 }
-state = idle;
+platformState = state.idle;
 </string>
           </argument>
         </arguments>
@@ -55,7 +55,10 @@ state = idle;
           <argument>
             <kind>1</kind>
             <string>///Launches Everything
-if (global.launch)state=launching;
+if (global.launch)
+{
+    platformState = state.launching;
+}
 </string>
           </argument>
         </arguments>
@@ -78,8 +81,11 @@ if (global.launch)state=launching;
             <kind>1</kind>
             <string>if (state=launching)
 {
-    var animation = 0
-    draw_sprite(sLaunch,0, x, y)
+    var i;
+    for (i = 0; i &lt; 5; i+=1)
+    {
+        draw_sprite(sLaunch, i, x, y);
+    }
 }
 </string>
           </argument>
@@ -104,7 +110,7 @@ if (global.launch)state=launching;
           <argument>
             <kind>1</kind>
             <string>///Setzt den Status zurück
-state = idle;
+platformState = state.idle;
 </string>
           </argument>
         </arguments>
