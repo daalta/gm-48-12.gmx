@@ -57,6 +57,10 @@ deadEnemy=5;
 vsp = 0;
 hsp = 0;
 state = idle;
+
+//Diese Variablen geben an, welche Frames geloopt werden sollen.
+firstFrame=0;
+lastFrame=0;
 </string>
           </argument>
         </arguments>
