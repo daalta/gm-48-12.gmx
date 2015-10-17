@@ -35,7 +35,7 @@
     <sprite>sprites\sControl</sprite>
     <sprite>sprites\sExplosion</sprite>
     <sprite>sprites\sSpawner</sprite>
-    <sprite>sprites\sprite9</sprite>
+    <sprite>sprites\sRespawn</sprite>
     <sprite>sprites\sWall</sprite>
     <sprite>sprites\sEnemyHelmet</sprite>
     <sprite>sprites\sEnemyHeavy</sprite>
