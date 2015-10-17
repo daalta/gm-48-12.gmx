@@ -25,9 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>walkSpeed=5;
-xscale=1;
+            <string>walkSpeed=7;
+xscale=1; //Spieler guckt zu anfang nach rechts.
 
+//states die der Spieler haben kann!
 enum state
 {
     idle,
@@ -35,6 +36,8 @@ enum state
     jump,
     fall
 }
+
+playerState=state.idle;
 </string>
           </argument>
         </arguments>
@@ -72,34 +75,6 @@ jumpFrameLast=4;
 //Fall: Falling
 fallFrameFirst=5;
 fallFrameLast=5;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="1">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Check launch key
-
-
-global.launch=false;
-
-global.launch=keyboard_check_pressed(KEYLAUNCH);
 </string>
           </argument>
         </arguments>
@@ -165,8 +140,10 @@ if (keyboard_check(KEYRIGHT))
             <kind>1</kind>
             <string>///Move
 
+//Distanz, die der Spieler sich bewegen würde.
+moveDist=(x+walkSpeed*move)
 
-x+=walkSpeed*move; 
+
 </string>
           </argument>
         </arguments>
@@ -209,6 +186,8 @@ x+=walkSpeed*move;
           <argument>
             <kind>1</kind>
             <string>///If launch is true...
+
+
 </string>
           </argument>
         </arguments>
