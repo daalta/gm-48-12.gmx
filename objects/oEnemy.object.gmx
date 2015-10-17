@@ -39,9 +39,60 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>walkSpeed = 1;
+            <string>//Init values and stats
+
+walkSpeed = 1;
 walkDirection = 1;
 hsp = walkSpeed;
+
+isJumpedOn = 0;
+
+//Enemy Stats
+statImmuneToPlayer = false;
+
+//unused stats
+statDamagesPlayerOnHit = false;
+statHarmless = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>604</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_inherited</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Reset JumpOn Timer
+if(isJumpedOn &gt; 0) {
+    isJumpedOn--;
+}
 </string>
           </argument>
         </arguments>
@@ -66,8 +117,6 @@ hsp = walkSpeed;
             <kind>1</kind>
             <string>///Collision and movement
 
-//TODO: handle states
-
 //set speed (and direction)
 hsp = walkSpeed * walkDirection;
 
@@ -85,6 +134,10 @@ if(collider != 0) {
     {
         hsp += dir;
     }
+}
+
+if(state == idle) {
+    state = moving;
 }
 </string>
           </argument>
@@ -114,20 +167,28 @@ var collider = collision_line(bbox_left, bbox_top, bbox_right, bbox_top, oPlayer
 if(collider != noone) {
     if(collider.vsp &gt; 0) {
         if(collider.bbox_bottom + ENEMY_COLLISION_THRESHOLD &lt; bbox_bottom) {
-            state = dead;
-            instance_destroy();
+            if(!statImmuneToPlayer) {
+                state = dead;
+                instance_destroy();
+            }
+            if(statDamagesPlayerOnHit &amp;&amp; !isJumpedOn) {
+                collider.lives--;
+            }
+            isJumpedOn = 10;
             collider.vsp = ENEMY_BOUNCE_BACK;
         }
     }
 }
 
 //Kill player
-if(state != dead) {
+if(state != dead &amp;&amp; !isJumpedOn &amp;&amp; !statHarmless) {
 var collider = place_meeting(x, y, oPlayer);
     if(collider != 0) {
-        collider.state = dead;
-        //TODO death
-        game_restart();
+        if(collider.bbox_bottom - ENEMY_COLLISION_THRESHOLD * 2 &gt; bbox_top) {
+            collider.state = dead;
+            //TODO death
+            game_restart();
+        }
     }
 }
 </string>

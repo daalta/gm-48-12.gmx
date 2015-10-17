@@ -33,6 +33,28 @@ global.lunch=false;
         </arguments>
       </action>
     </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string></string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="5" enumb="82">
       <action>
         <libid>1</libid>
@@ -56,6 +78,63 @@ global.lunch=false;
         </arguments>
       </action>
     </event>
+    <event eventtype="7" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Get spawn list from spawns.ini file to enemyStack
+
+//Commands:
+//99=End of file
+//0= something went terrible wrong. never be 0.
+//(because 0 might equal that there is no list! misunderstanding possible
+
+//Enemy types:
+//1=walker
+//2=next enemy type
+
+//Delays:
+//10=0.5 seconds
+//11=1 second
+//12=2 seconds
+//13=3 seconds
+//...
+//20=20 seconds
+
+ini_open("spawns.ini");
+
+//Read the section declared in the argument
+sectionToRead="rLevel0";
+
+//count number of spawned enemies.
+enemyNumber=0;
+
+while(ds_stack_top(enemyStack)!=99)//read actual file, line by line per level
+    {
+    lineJustRead=ini_read_real(sectionToRead,string(enemyNumber),0);
+    show_debug_message("Just read: "+string(lineJustRead));
+    ds_stack_push(enemyStack,lineJustRead);
+    enemyNumber++;
+    }
+ini_close();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="7" enumb="2">
       <action>
         <libid>1</libid>
@@ -73,7 +152,36 @@ global.lunch=false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.lunch=false;
+            <string>//launch all enemies?
+global.lunch=false;
+
+//a stack to save all enemies to
+enemyStack=ds_stack_create()
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="114">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(keyboard_check(vk_alt)) {
+room_goto_next();
+}
 </string>
           </argument>
         </arguments>

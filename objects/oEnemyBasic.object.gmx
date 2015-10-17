@@ -40,6 +40,35 @@
           <argument>
             <kind>1</kind>
             <string>image_speed = 0.15;
+image_index=0;
+image_xscale=1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///set state frames
+
+movingFirstFrame=0
+movingLastFrame=3
+
+fallingFirstFrame=4
+fallingLastFrame=5
 </string>
           </argument>
         </arguments>
@@ -77,6 +106,87 @@
           <argument>
             <kind>1</kind>
             <string></string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>604</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_inherited</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Animate
+///Animate
+show_debug_message("IMAGE INDEX: "+string(image_index));
+switch(state)
+{
+    case moving:
+    firstFrame=movingFirstFrame;
+    lastFrame=movingLastFrame;
+    image_speed=0.15;
+    break;
+    case falling:
+    firstFrame=fallingFirstFrame;
+    lastFrame=fallingLastFrame;
+    image_speed=0.1;
+    break;
+}
+
+if(image_index&lt;firstFrame||lastFrame+1&lt;=image_index)
+    {
+    show_debug_message("SET IMAGE INDEX TO "+string(firstFrame));
+    image_index=firstFrame;
+    }
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///draw sprite
+draw_sprite_ext(sEnemyBasic,image_index,x,y,1,1,0,c_white,1);
+</string>
           </argument>
         </arguments>
       </action>

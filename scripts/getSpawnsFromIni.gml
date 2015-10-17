@@ -17,7 +17,7 @@
 //...
 //20=20 seconds
 
-ini_open(spawns.ini);
+ini_open(spawn.ini);
 
 //Read the section declared in the argument
 sectionToRead=argument0;
@@ -29,7 +29,8 @@ enemyStack=ds_stack_create();
 
 while(ds_stack_top(enemyStack)!=0)
     {
-    ds_stack_push(ini_read_string(argument0,enemyNumber,0));
+    ds_stack_push(ini_read_string(argument0,string(enemyNumber),0));
     }
+ini_close();
 return enemyStack;
 

@@ -69,10 +69,6 @@ imageRotation = 0;
             <string>///Animation frames
 
 
-//Diese Variablen geben an, welche Frames geloopt werden sollen.
-firstFrame=0;
-lastFrame=0;
-
 //Idle: standing still
 idleFirstFrame=0;
 idleLastFrame=2;
