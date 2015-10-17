@@ -43,6 +43,7 @@
 walkSpeed=7;
 xscale=1; //Spieler guckt zu anfang nach rechts.
 image_index=0;
+fallingRotateSpeed=20//-Grad Rotation pro Frame wäghrend falling-State
 </string>
           </argument>
         </arguments>
@@ -299,16 +300,19 @@ switch(state)
         firstFrame=idleFirstFrame;
         lastFrame=idleLastFrame;
         image_speed=0.175
+        image_angle=0;
     break;
     case moving:
         firstFrame=movingFirstFrame;
         lastFrame=movingLastFrame;
         image_speed=0.25
+        image_angle=0;
     break;
     case falling:
         firstFrame=fallingFirstFrame;
         lastFrame=fallingLastFrame;
         image_speed=0.25
+        image_angle+=fallingRotateSpeed;
     break;    
 }
  
@@ -318,7 +322,7 @@ if(image_index&lt;firstFrame||lastFrame+1&lt;=image_index)
     image_index=firstFrame
     }
  
-draw_sprite_ext(sPlayer,image_index,x,y,xscale,1,0,c_white,1);
+draw_sprite_ext(sPlayer,image_index,x,y,xscale,1,image_angle,c_white,1);
 </string>
           </argument>
         </arguments>
