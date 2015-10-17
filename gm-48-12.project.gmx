@@ -33,6 +33,7 @@
     <sprite>sprites\sControl</sprite>
     <sprite>sprites\sExplosion</sprite>
     <sprite>sprites\sSpawner</sprite>
+    <sprite>sprites\sWall</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background1</background>
@@ -62,6 +63,7 @@
         <object>objects\oPlatformJump</object>
         <object>objects\oPlatformNormal</object>
       </objects>
+      <object>objects\oWall</object>
     </objects>
     <object>objects\oExplosion</object>
     <object>objects\oSpawner</object>
@@ -70,13 +72,14 @@
     <room>rooms\rLevel0</room>
     <room>rooms\room0</room>
   </rooms>
-  <constants number="6">
+  <constants number="7">
     <constant name="LAUNCHSPEED">-16</constant>
     <constant name="KEYLEFT">vk_left</constant>
     <constant name="KEYRIGHT">vk_right</constant>
     <constant name="KEYLAUNCH">vk_space</constant>
     <constant name="GRAVITY">0.7</constant>
     <constant name="ENEMY_COLLISION_THRESHOLD">3</constant>
+    <constant name="ENEMY_BOUNCE_BACK">-8</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>
