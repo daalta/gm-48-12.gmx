@@ -108,15 +108,20 @@ if(collider != 0) {
             <kind>1</kind>
             <string>///get killed by/kill the player
 
+
+//get killed by player
 var collider = collision_line(bbox_left, bbox_top, bbox_right, bbox_top, oPlayer, false, false);
 if(collider != noone) {
     if(collider.vsp &gt; 0) {
-        if(collider.bbox_bottom + 4 &lt; bbox_bottom) {
+        if(collider.bbox_bottom + ENEMY_COLLISION_THRESHOLD &lt; bbox_bottom) {
             state = dead;
             instance_destroy();
+            collider.vsp = ENEMY_BOUNCE_BACK;
         }
     }
 }
+
+//Kill player
 if(state != dead) {
 var collider = place_meeting(x, y, oPlayer);
     if(collider != 0) {

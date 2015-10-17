@@ -76,12 +76,14 @@
     <instance objName="oEnemyBasic" x="928" y="64" name="inst_A829D602" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oEnemyBasic" x="192" y="192" name="inst_DD5A63B9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oEnemyBasic" x="256" y="352" name="inst_0597885A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oPlatformNormal" x="0" y="640" name="inst_419AD561" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="90"/>
-    <instance objName="oPlatformNormal" x="1248" y="640" name="inst_AD708D29" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="oPlatformJump" x="320" y="256" name="inst_A900B432" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oPlatformJump" x="640" y="416" name="inst_038999C3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oPlatformJump" x="480" y="640" name="inst_E13C174E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oPlatformJump" x="640" y="640" name="inst_9214AE74" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oWall" x="0" y="0" name="inst_706BD526" locked="0" code="" scaleX="1" scaleY="6" colour="4294967295" rotation="0"/>
+    <instance objName="oWall" x="1248" y="0" name="inst_03BB7549" locked="0" code="" scaleX="1" scaleY="6" colour="4294967295" rotation="0"/>
+    <instance objName="oEnemyHelmet" x="96" y="32" name="inst_EC315332" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oEnemyHelmet" x="672" y="32" name="inst_8625AD94" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

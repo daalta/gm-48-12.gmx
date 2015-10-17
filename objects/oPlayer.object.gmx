@@ -44,6 +44,8 @@ walkSpeed=7;
 xscale=1; //Spieler guckt zu anfang nach rechts.
 image_index=0;
 fallingRotateSpeed=20//-Grad Rotation pro Frame wäghrend falling-State
+
+imageRotation = 0;
 </string>
           </argument>
         </arguments>
@@ -240,7 +242,7 @@ hsp=(walkSpeed*move)
             <string>///Collide with walls
 
 //collide with wall
-var collider = place_meeting(x + hsp, y, oStatic);
+var collider = place_meeting(x + hsp, y + vsp, oStatic);
 if(collider != 0) {
     var dir = sign(hsp);
     hsp=0 //Because we collided with the wall!
@@ -248,7 +250,7 @@ if(collider != 0) {
         state = idle;
     }
     //Move until wall is perfectly touched
-    while(place_meeting(x + hsp + dir, y, oStatic) == 0)
+    while(place_meeting(x + hsp + dir, y + vsp, oStatic) == 0)
     {
         hsp += dir;
     }
@@ -334,19 +336,19 @@ switch(state)
         firstFrame=idleFirstFrame;
         lastFrame=idleLastFrame;
         image_speed=0.05
-        image_angle=0;
+        imageRotation =0;
     break;
     case moving:
         firstFrame=movingFirstFrame;
         lastFrame=movingLastFrame;
         image_speed=0.5
-        image_angle=0;
+        imageRotation =0;
     break;
     case falling:
         firstFrame=fallingFirstFrame;
         lastFrame=fallingLastFrame;
         image_speed=0.25
-        image_angle+=fallingRotateSpeed;
+        imageRotation +=fallingRotateSpeed;
     break;    
     case deadCeiling:
         firstFrame=deadCeilingFirstFrame;
@@ -362,7 +364,7 @@ if(image_index&lt;firstFrame||lastFrame+1&lt;=image_index)
     image_index=firstFrame
     }
  
-draw_sprite_ext(sPlayer,image_index,x,y,xscale,1,image_angle,c_white,1);
+draw_sprite_ext(sPlayer,image_index,x,y,xscale,1,imageRotation,c_white,1);
 </string>
           </argument>
         </arguments>
