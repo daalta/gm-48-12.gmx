@@ -35,6 +35,7 @@
     <sprite>sprites\sSpawner</sprite>
     <sprite>sprites\sWall</sprite>
     <sprite>sprites\sEnemyHelmet</sprite>
+    <sprite>sprites\sEnemyHeavy</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background1</background>
@@ -70,6 +71,7 @@
     </objects>
     <object>objects\oExplosion</object>
     <object>objects\oSpawner</object>
+    <object>objects\oDeathExplosion</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rLevel0</room>
