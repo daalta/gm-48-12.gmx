@@ -227,6 +227,9 @@ var collider = place_meeting(x + hsp, y, oStatic);
 if(collider != 0) {
     var dir = sign(hsp);
     hsp=0 //Because we collided with the wall!
+    if(state == moving) {
+        state = idle;
+    }
     //Move until wall is perfectly touched
     while(place_meeting(x + hsp + dir, y, oStatic) == 0)
     {
