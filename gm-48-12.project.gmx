@@ -13,6 +13,7 @@
     <sprite>sprites\sEnemyBasic</sprite>
     <sprite>sprites\sControl</sprite>
     <sprite>sprites\sExplosion</sprite>
+    <sprite>sprites\sSpawner</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background1</background>
@@ -41,17 +42,19 @@
       </objects>
     </objects>
     <object>objects\oExplosion</object>
+    <object>objects\oSpawner</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rLevel0</room>
     <room>rooms\room0</room>
   </rooms>
-  <constants number="5">
-    <constant name="LAUNCHSPEED">-20</constant>
+  <constants number="6">
+    <constant name="LAUNCHSPEED">-16</constant>
     <constant name="KEYLEFT">vk_left</constant>
     <constant name="KEYRIGHT">vk_right</constant>
     <constant name="KEYLAUNCH">vk_space</constant>
-    <constant name="GRAVITY">1</constant>
+    <constant name="GRAVITY">0.7</constant>
+    <constant name="ENEMY_COLLISION_THRESHOLD">3</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>
