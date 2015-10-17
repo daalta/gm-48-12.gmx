@@ -8,6 +8,7 @@
   <sprites name="sprites">
     <sprite>sprites\sPlatformNormal</sprite>
     <sprite>sprites\sPlatformJump</sprite>
+    <sprite>sprites\sPlayer</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -33,11 +34,12 @@
       </objects>
     </objects>
   </objects>
-  <rooms name="rooms">
-    <room>rooms\room1</room>
-  </rooms>
-  <constants number="1">
-    <constant name="LAUNCHSPEED">20</constant>
+  <rooms name="rooms"/>
+  <constants number="4">
+    <constant name="LAUNCHSPEED">-20</constant>
+    <constant name="KEYLEFT">vk_left</constant>
+    <constant name="KEYRIGHT">vk_right</constant>
+    <constant name="KEYLAUNCH">vk_space</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>
