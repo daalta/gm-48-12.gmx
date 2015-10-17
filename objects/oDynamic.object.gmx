@@ -81,8 +81,13 @@ state = idle;
 //launch
 if(global.lunch) 
 {
-    vsp = LAUNCHSPEED;
-    state = falling;
+    leftCollision=collision_point(bbox_left,bbox_bottom+1,oPlatformJump,0,0);
+    rightCollision=collision_point(bbox_right,bbox_bottom+1,oPlatformJump,0,0);
+    if(rightCollision!=noone||leftCollision!=noone)
+    {
+        vsp = LAUNCHSPEED;
+        state = falling;
+    }
 }
 
 //gravity
