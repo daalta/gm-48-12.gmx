@@ -11,9 +11,11 @@
     <sprite>sprites\sPlayer</sprite>
     <sprite>sprites\sLaunch</sprite>
     <sprite>sprites\sEnemyBasic</sprite>
+    <sprite>sprites\sExplosion</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts"/>
   <objects name="objects">
     <objects name="Control">
       <object>objects\oControl</object>
@@ -36,8 +38,11 @@
         <object>objects\oPlatformNormal</object>
       </objects>
     </objects>
+    <object>objects\oExplosion</object>
   </objects>
-  <rooms name="rooms"/>
+  <rooms name="rooms">
+    <room>rooms\room0</room>
+  </rooms>
   <constants number="5">
     <constant name="LAUNCHSPEED">-20</constant>
     <constant name="KEYLEFT">vk_left</constant>
