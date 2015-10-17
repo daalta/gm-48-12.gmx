@@ -33,25 +33,18 @@
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>self</whoName>
+        <whoName>oPlayer</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>walkSpeed=7;
+            <string>///Animation variables
+walkSpeed=7;
 xscale=1; //Spieler guckt zu anfang nach rechts.
+image_index=0;
 
-//states die der Spieler haben kann!
-enum state
-{
-    idle,
-    walk,
-    jump,
-    fall
-}
-
-playerState=state.idle;
+state=idle;
 </string>
           </argument>
         </arguments>
@@ -74,21 +67,23 @@ playerState=state.idle;
             <kind>1</kind>
             <string>///Animation frames
 
+
+//Diese Variablen geben an, welche Frames geloopt werden sollen.
+firstFrame=0;
+lastFrame=0;
+
 //Idle: standing still
-idleFrameFirst=0;
-idleFrameLast=0;
+idleFirstFrame=0;
+idleLastFrame=0;
 
-//Run: Walking left or right
-runFrameFirst=1;
-runFrameLast=3;
+//Moving: Walking left or right
+movingFirstFrame=1;
+movingLastFrame=3;
 
-//Jump: Ascending
-jumpFrameFirst=4;
-jumpFrameLast=4;
 
-//Fall: Falling
-fallFrameFirst=5;
-fallFrameLast=5;
+//Falling: Not colliding with any ground currently
+fallingFirstFrame=4;
+fallingLastFrame=4;
 </string>
           </argument>
         </arguments>
@@ -145,14 +140,17 @@ move = 0;
 //Testenchecks bewegung
 if (keyboard_check(KEYLEFT))
 {
+    state=moving;
     move--;
 }
 
 if (keyboard_check(KEYRIGHT))
 {
+    state=moving;
     move++;
 }
 
+if move=0 state=idle //wenn wir uns nicht bewegen, idle state!
 
     
 </string>
@@ -206,76 +204,6 @@ hsp=(walkSpeed*move)
           </argument>
         </arguments>
       </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///If launch is true...
-
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Collide with walls
-
-//collide with wall
-var collider = place_meeting(x + hsp, y, oStatic);
-if(collider != 0) {
-    var dir = sign(hsp);
-    hsp=0 //Because we collided with the wall!
-    //Move until wall is perfectly touched
-    while(place_meeting(x + hsp + dir, y, oStatic) == 0)
-    {
-        hsp += dir;
-    }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>604</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_inherited</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
     </event>
     <event eventtype="8" enumb="0">
       <action>
@@ -294,14 +222,9 @@ if(collider != 0) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(move!=0)
-{
-    xscale=move;   
-}
+            <string>///debug text
 
-
-
-draw_sprite_ext(sPlayer,0,x,y,xscale,1,0,c_white,1);
+draw_text(x+110,y,string(image_index));
 </string>
           </argument>
         </arguments>
