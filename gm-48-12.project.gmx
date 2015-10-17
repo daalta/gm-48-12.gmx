@@ -34,6 +34,7 @@
     <sprite>sprites\sExplosion</sprite>
     <sprite>sprites\sSpawner</sprite>
     <sprite>sprites\sWall</sprite>
+    <sprite>sprites\sEnemyHelmet</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background1</background>
@@ -54,6 +55,8 @@
       <objects name="Enemy">
         <object>objects\oEnemy</object>
         <object>objects\oEnemyBasic</object>
+        <object>objects\oEnemyHelmet</object>
+        <object>objects\oEnemyHeavy</object>
       </objects>
     </objects>
     <objects name="Static">
