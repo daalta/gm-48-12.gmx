@@ -46,6 +46,8 @@ image_index=0;
 fallingRotateSpeed=20//-Grad Rotation pro Frame wäghrend falling-State
 
 imageRotation = 0;
+
+animationTimer = 0; // Timer for animation
 </string>
           </argument>
         </arguments>
@@ -107,7 +109,7 @@ fallingLastFrame=2;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>game_restart();
+            <string>//game_restart();
 </string>
           </argument>
         </arguments>
@@ -137,22 +139,22 @@ fallingLastFrame=2;
 //0     bleib stehen
 //1     rechts
 move = 0;
-
-//Testenchecks bewegung
-if (keyboard_check(KEYLEFT))
-{
-    if state==idle state=moving;
-    move--;
+if(state &lt; dead) {
+    //Testenchecks bewegung
+    if (keyboard_check(KEYLEFT))
+    {
+        if state==idle state=moving;
+        move--;
+    }
+    
+    if (keyboard_check(KEYRIGHT))
+    {
+        if state==idle state=moving;
+        move++;
+    }
+    
+    if move==0&amp;&amp;state==moving state=idle //wenn wir uns nicht bewegen, idle state!
 }
-
-if (keyboard_check(KEYRIGHT))
-{
-    if state==idle state=moving;
-    move++;
-}
-
-if move==0&amp;&amp;state==moving state=idle //wenn wir uns nicht bewegen, idle state!
-
     
 </string>
           </argument>
@@ -249,15 +251,14 @@ hsp=(walkSpeed*move)
           <argument>
             <kind>1</kind>
             <string>///Tod
-
-if (state = deadCeiling)
-{
-    if (image_index=21)
-    {
-        state = dead;
+if(state == deadCorpse) {
+    animationTimer--;
+    if(animationTimer &lt;= 0) {
+        instance_create(x, y, oRespawnAnimation);
+        instance_destroy();
     }
-    
 }
+
 </string>
           </argument>
         </arguments>
@@ -286,8 +287,7 @@ if(move!=0)
 {
     xscale=move;  
 }
- 
- 
+
  
 switch(state)
 {  
@@ -309,19 +309,39 @@ switch(state)
         image_speed=0.25
         imageRotation +=fallingRotateSpeed;
     break;    
+    case dead:
+    case deadEnemy:
     case deadCeiling:
         firstFrame=deadCeilingFirstFrame;
         lastFrame=deadCeilingLastFrame;
-        image_speed=0.25
-        image_angle=0
+        image_speed=0.25;
+        imageRotation=0;
     break;
+    case deadCorpse:
+        firstFrame=deadCeilingLastFrame;
+        lastFrame=deadCeilingLastFrame;
+        image_speed=0;
+        imageRotation=0;
+        image_index=firstFrame;
 }
  
 //Loope nur die Bilder, die von firstFrame zu lastFrame reichen
-if(image_index&lt;firstFrame||lastFrame+1&lt;=image_index)
-    {
-    image_index=firstFrame
+if(image_index &lt; firstFrame) {
+    image_index=firstFrame;
+}
+//if(lastFrame + 1 &lt;= image_index)
+if(image_index + 1 &gt; lastFrame) 
+{
+    //if(state == dead || state == deadCeilin
+    if(state &gt; dead &amp;&amp; state != deadCorpse) {
+        //dead body animation ends
+        state = deadCorpse;
+        animationTimer = 120;
+        image_index = lastFrame;
+    } else {
+        image_index=firstFrame;
     }
+}
  
 draw_sprite_ext(sPlayer,image_index,x,y,xscale,1,imageRotation,c_white,1);
 </string>

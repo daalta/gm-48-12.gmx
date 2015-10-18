@@ -67,6 +67,8 @@ image_xscale=1;
             <string>///set stats
 moveSpeed=2;
 moveDirection=image_xscale;
+
+statPoints = 1000
 </string>
           </argument>
         </arguments>

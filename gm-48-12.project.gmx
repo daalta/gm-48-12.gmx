@@ -87,11 +87,15 @@
       </objects>
       <object>objects\oWall</object>
     </objects>
-    <object>objects\oExplosion</object>
     <object>objects\oSpawner</object>
-    <object>objects\oDeathExplosion</object>
+    <objects name="Particles">
+      <object>objects\oExplosion</object>
+      <object>objects\oRespawnAnimation</object>
+    </objects>
     <object>objects\oDummyPlayer</object>
-    <object>objects\oDummyEnemy</object>
+    <objects name="Dummy">
+      <object>objects\oDummyEnemy</object>
+    </objects>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\timelineIntro</timeline>

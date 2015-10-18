@@ -39,8 +39,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>statImmuneToPlayer = true;
+            <string>///Init stats
+statImmuneToPlayer = true;
 moveSpeed = 2;
+moveDirection=image_xscale;
+
+statPoints = 2000;
 </string>
           </argument>
         </arguments>

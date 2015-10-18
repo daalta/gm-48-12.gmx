@@ -116,7 +116,12 @@ else if(spawnTimer!=-1)spawnTimer--
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>game_restart();
+            <string>///restart the room or game
+if(keyboard_check(vk_shift)) {
+    game_restart();
+} else {
+    room_restart();
+}
 </string>
           </argument>
         </arguments>
