@@ -86,6 +86,7 @@
   </scripts>
   <fonts name="fonts">
     <font>fonts\fontMain</font>
+    <font>fonts\fontNormal</font>
   </fonts>
   <objects name="objects">
     <objects name="Control">
