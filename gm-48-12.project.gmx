@@ -71,6 +71,7 @@
       <object>objects\oMainMenu</object>
       <object>objects\oControlTest</object>
       <object>objects\oControlIntro</object>
+      <object>objects\oScoreWidget</object>
     </objects>
     <objects name="Dynamic">
       <object>objects\oDynamic</object>

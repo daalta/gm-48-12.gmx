@@ -40,6 +40,8 @@ spawner0=noone;
 spawner1=noone;
 
 spawnTimer=0 //delay between spawns
+
+global.enemiesLiving = 0;
 </string>
           </argument>
         </arguments>
@@ -92,6 +94,7 @@ if(spawnTimer=0)
 {
 
     spawnTimer=spawnEnemy(spawner0,spawner1,ds_queue_dequeue(enemyStack));
+    global.enemiesLiving++;
 }
 else if(spawnTimer!=-1)spawnTimer--
 </string>
