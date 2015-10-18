@@ -27,6 +27,7 @@
     <sound>sound\soundLaunch</sound>
     <sound>sound\musicIntro</sound>
     <sound>sound\musicLevel</sound>
+    <sound>sound\soundFart</sound>
     <sound>sound\soundEnemyReachedExit</sound>
     <sound>sound\musicTutorial</sound>
     <sound>sound\zerstampfen</sound>
