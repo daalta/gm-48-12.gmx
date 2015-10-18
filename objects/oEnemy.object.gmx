@@ -47,8 +47,8 @@ hsp = moveSpeed;
 
 isJumpedOn = 0;
 
-suckTimer=30//time before being completely sucked into portal
-
+suckTimerInit=30//time before being completely sucked into portal
+suckTimer=suckTimerInit
 //Enemy Stats
 statImmuneToPlayer = false;
 
@@ -237,8 +237,15 @@ move_towards_point(other.x,other.y,choose(5,4,3));
 
 if(suckTimer==0)
 {
+    
     instance_destroy()
-}else suckTimer--;
+}
+else
+{
+    if(suckTimer==suckTimerInit)audio_play_sound(soundEnemyReachedExit,0,0);
+    suckTimer--;
+    
+}
 </string>
           </argument>
         </arguments>

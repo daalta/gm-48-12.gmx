@@ -26,6 +26,8 @@
   <sounds name="sound">
     <sound>sound\soundLaunch</sound>
     <sound>sound\musicIntro</sound>
+    <sound>sound\musicLevel</sound>
+    <sound>sound\soundEnemyReachedExit</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sPlatformNormal</sprite>
@@ -61,6 +63,7 @@
     <script>scripts\drawGuiButtonAnim.gml</script>
     <script>scripts\drawGuiButton.gml</script>
     <script>scripts\spawnEnemy.gml</script>
+    <script>scripts\script4.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fontMain</font>
@@ -111,9 +114,9 @@
     <timeline>timelines\timelineIntro</timeline>
   </timelines>
   <rooms name="rooms">
+    <room>rooms\rLevel0</room>
     <room>rooms\rIntro</room>
     <room>rooms\rMainMenu</room>
-    <room>rooms\rLevel0</room>
     <room>rooms\rLevel1</room>
     <room>rooms\room0</room>
   </rooms>

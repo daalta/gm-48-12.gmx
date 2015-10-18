@@ -42,6 +42,33 @@ spawner1=noone;
 spawnTimer=0 //delay between spawns
 
 global.enemiesLiving = 0;
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Screenshake stuff
+
+global.screenshakeStrength=20;
+global.screenshakeSpeed=2;
+global.screenshakeDecay=0.1; 
 </string>
           </argument>
         </arguments>
@@ -97,6 +124,27 @@ if(spawnTimer=0)
     global.enemiesLiving++;
 }
 else if(spawnTimer!=-1)spawnTimer--
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//screenshake
 </string>
           </argument>
         </arguments>
