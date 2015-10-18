@@ -114,7 +114,7 @@ statToHeavyToJump = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Move object and collide
+            <string>///adjust vsp, add gravity, launch
 
 
 //launch
@@ -132,80 +132,59 @@ if(global.lunch &amp;&amp; !statToHeavyToJump)
 //gravity
 vsp += GRAVITY;
 
-    var dir = sign(hsp);
-if(!place_meeting(x - dir, y-1, oStatic)) 
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///collisions with static objects
+
+//horizontal collisions
+if(place_meeting(x+hsp,y,oStatic))
 {
-    //collide with ceiling
-    if(vsp &lt; 0) 
-    {
-        if(collision_line(bbox_left, bbox_top + vsp, bbox_right, bbox_top + vsp, oStatic, false, false))
-        {
-            state = dead;
-            instance_destroy();
-        }
-    }
+    //bounce horizontally from walls.
+    if(state=moving||place_meeting(x+hsp,y,oWall))state=idle;
     
-    if(vsp &gt;= 0) {
-        if(collision_line(bbox_left, bbox_bottom + vsp, bbox_right, bbox_bottom + vsp, oStatic, false, false))
-        {
-            vsp = 0; //Because we collided with the ground!
-            if(state == falling) {
-                state = idle;
-            }
-            //Move until ground is perfectly touched
-            while(!collision_line(bbox_left, bbox_bottom + vsp +1, bbox_right, bbox_bottom + vsp +1, oStatic, false, false))
-            {
-                vsp++;
-            }
-        }
+    
+    while(!place_meeting(x+sign(hsp),y,oStatic))
+    {
+        x+=sign(hsp);
     }
+    hsp=0;
+    
 }
-y+=vsp;
-/*
+x+=hsp;
 
-//Collide with ground
-if(vsp &gt;= 0) 
+//vertical collisions
+if(place_meeting(x,y+vsp,oStatic))
 {
-    //unten kollision mit boden
-    collider=place_meeting(x, y + vsp, oStatic);
-    if(collider) 
+    if(vsp&lt;0)state=deadCeiling;
+
+    while(!place_meeting(x,y+sign(vsp),oStatic))
     {
-        vsp = 0; //Because we collided with the ground!
-        if(state == falling) {
-            state = idle;
-        }
-        //Move until ground is perfectly touched
-        while(place_meeting(x, y + vsp + 1, oStatic) == 0)
-        {
-            vsp++;
-        }
+        y+=sign(vsp);
     }
-}*/
-
-
-
-
-///Collide with walls
-
-//collide with wall
-
-var collider = place_meeting(x + hsp, y-1, oStatic);
-if(collider != 0 ) {
-    hsp=0 //Because we collided with the wall!
-    if(state == moving) {
-        state = idle;
-    }
-    //Move until wall is perfectly touched
-    while(!place_meeting(x + hsp + dir, y, oStatic))
-    {
-        hsp += dir;
-    }
+    vsp=0;
+    if(state=falling)state=moving;
 }
 
-
-//Move
-x += hsp;
-
+y+=vsp;
 </string>
           </argument>
         </arguments>

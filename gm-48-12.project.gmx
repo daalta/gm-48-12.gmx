@@ -43,6 +43,7 @@
     <sprites name="Gui">
       <sprite>sprites\sButton</sprite>
     </sprites>
+    <sprite>sprites\sCharDeathCeiling</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background1</background>

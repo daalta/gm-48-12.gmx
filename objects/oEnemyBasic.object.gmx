@@ -130,7 +130,11 @@ fallingLastFrame=5
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>if(state=deadCeiling)
+{
+    instance_destroy();
+}
+</string>
           </argument>
         </arguments>
       </action>
