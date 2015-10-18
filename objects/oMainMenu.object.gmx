@@ -66,7 +66,7 @@ if(image_index &lt; firstFrame || image_index &gt;= lastFrame + 1)
     image_index = firstFrame;
 }
 
-var xPos = room_width / 2 - 128;
+var xPos = room_width / 2 + 300;
 
 drawGuiButtonAnim(xPos, 100, imageIndex, "Play Game", currentButton == 0);
 drawGuiButtonAnim(xPos, 180, imageIndex, "Leave", currentButton == 1);
