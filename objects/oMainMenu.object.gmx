@@ -184,17 +184,7 @@ switch(currentButton)
     case 0:
     audio_play_sound(musicLevel,0,1);
     //Zufällige Levelauswahl
-        switch(irandom(1)) 
-        {
-            case 0:
-                room_goto(rLevel0);            
-                instance_destroy();
-                break;
-            case 1:
-                room_goto(rLevel1);
-                instance_destroy();
-                break;
-        }
+        room_goto_next()
         break;
     case 1:
         game_end();
