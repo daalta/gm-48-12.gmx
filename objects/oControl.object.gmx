@@ -131,40 +131,23 @@ if(spawnTimer=0)
     if(spawnTimer == 0) {
         global.enemiesLiving++;
     }
+    if(spawnTimer &lt; -1) {
+        //Errored!
+        spawnTimer = 0;
+    }
 }
-else if(spawnTimer!=-1)spawnTimer--
+else if(spawnTimer != -1)spawnTimer--
 
 if(enemyRespawnTimer &lt;= 0) {
     if(!ds_queue_empty(global.enemyRespawnQueue)) {
         enemyRespawnTimer = enemyRespawnDelay;
-        spawnTimer=spawnEnemy(spawner0,spawner1,ds_queue_dequeue(global.enemyRespawnQueue));
+        spawnEnemy(spawner0,spawner1,ds_queue_dequeue(global.enemyRespawnQueue));
         global.enemiesLiving++;
     }
 } else {
     enemyRespawnTimer--;
 }
 
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>//screenshake
 </string>
           </argument>
         </arguments>
