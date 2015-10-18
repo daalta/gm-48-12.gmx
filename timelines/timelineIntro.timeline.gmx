@@ -252,7 +252,7 @@ instance_create(864-128,352+128,oDummyEnemy);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room_goto(rLevel0);
+            <string>room_goto(rMainMenu);
 </string>
           </argument>
         </arguments>

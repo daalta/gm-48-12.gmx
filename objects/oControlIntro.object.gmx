@@ -25,22 +25,75 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Init Values
-currentButton = 0;
-buttonCount = 2;
+            <string>///Init vars
+//Spacebar timer
+spaceDownTimerMax = 60;
+spaceDownTimer = spaceDownTimerMax;
 
-firstFrame = 1;
-lastFrame = 4;
-imageIndex = 0;
-imageSpeed = 0.3;
-
-xPos = room_width / 2 - 128;
+//View Speed
+xViewSpeed=0;
 </string>
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>211</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_sound</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>6</kind>
+            <sound>musicIntro</sound>
+          </argument>
+          <argument>
+            <kind>3</kind>
+            <string>0</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>305</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_timeline_set</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>14</kind>
+            <timeline>timelineIntro</timeline>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>0</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
-    <event eventtype="6" enumb="0">
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -57,12 +110,41 @@ xPos = room_width / 2 - 128;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Mouse Integration???
-if(mouse_x &gt; xPos || mouse_x &lt; xPos + 256) {
-    if(mouse_y &gt; 100 &amp;&amp; mouse_y &lt; 164) {
-        event_perform(ev_keypress, vk_enter);
+            <string>///CheckFor Skip
+if(keyboard_check(vk_space)) {
+    spaceDownTimer--;
+    if(spaceDownTimer &lt;= 0) {
+        //Goto MainMenu
+        room_goto(rMainMenu);
+        //Stop music
+        audio_stop_sound(musicIntro);
     }
+} else {
+    //Reset SpaceBar
+    spaceDownTimer = spaceDownTimerMax;
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Move Camera
+view_xview[0]+=xViewSpeed;
 </string>
           </argument>
         </arguments>
@@ -85,118 +167,21 @@ if(mouse_x &gt; xPos || mouse_x &lt; xPos + 256) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Render GUI
-
-//Animation
-imageIndex += imageSpeed;
-
-//Loope nur die Bilder, die von firstFrame zu lastFrame reichen
-if(image_index &lt; firstFrame || image_index &gt;= lastFrame + 1)
-{
-    image_index = firstFrame;
-}
-
-var xPos = room_width / 2 + 300;
-
-drawGuiButtonAnim(xPos, 100, imageIndex, "Play Game", currentButton == 0);
-drawGuiButtonAnim(xPos, 180, imageIndex, "Leave", currentButton == 1);
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="40">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Go Down
-currentButton = (currentButton + 1) % buttonCount;
-imageIndex = firstFrame;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="38">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Go Up
-currentButton--;
-if(currentButton &lt; 0) {
-    currentButton = buttonCount - 1;
-}
-imageIndex = firstFrame;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="13">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Do somthing on Button Action
-
-switch(currentButton) 
-{
-    case 0:
-    //Zufällige Levelauswahl
-        switch(irandom(1)) 
-        {
-            case 0:
-                room_goto(rLevel0);            
-                instance_destroy();
-                break;
-            case 1:
-                room_goto(rLevel1);
-                instance_destroy();
-                break;
-        }
-        break;
-    case 1:
-        game_end();
-        break;
+            <string>///Draw Skip hint when soace is pressed
+if(keyboard_check(vk_space)) {
+    var currrentViewX = view_xview[view_current];
+    var currrentViewY = view_yview[view_current];
+    var currrentViewXSize = view_wview[view_current];
+    var currrentViewYSize = view_hview[view_current];
+    var xPos = currrentViewX + currrentViewXSize / 2;
+    var yPos = currrentViewY + currrentViewYSize - 80;
+    
+    draw_set_font(fontMain);
+    draw_set_colour(c_white);
+    draw_set_halign(fa_center);
+    draw_set_valign(fa_middle);
+    
+    draw_text(xPos, yPos, "Hold Space to skip.");
 }
 </string>
           </argument>
