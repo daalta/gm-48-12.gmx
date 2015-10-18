@@ -280,6 +280,7 @@ if(keyboard_check(vk_shift)) {
             <kind>1</kind>
             <string>/// GOTO MainMenu
 room_goto(rMainMenu);
+audio_stop_all();
 </string>
           </argument>
         </arguments>
