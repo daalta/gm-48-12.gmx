@@ -42,7 +42,6 @@
             <string>///set sprite variables
 image_speed = 0.15;
 image_index=0;
-image_xscale=1;
 
 </string>
           </argument>
@@ -66,9 +65,11 @@ image_xscale=1;
             <kind>1</kind>
             <string>///set stats
 moveSpeed=2;
+image_xscale = 1;
 moveDirection=image_xscale;
 
 statPoints = 1000
+statNextEnemy = ENEMY_ID_BASIC_2;
 </string>
           </argument>
         </arguments>
@@ -189,7 +190,7 @@ if(image_index&lt;firstFrame||lastFrame+1&lt;=image_index)
           <argument>
             <kind>1</kind>
             <string>///draw sprite
-draw_sprite_ext(sEnemyBasic,image_index,x,y,moveDirection,1,0,c_white,1);
+draw_sprite_ext(sEnemyBasic,image_index,x,y,image_xscale,1,0,c_white,1);
 </string>
           </argument>
         </arguments>

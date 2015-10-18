@@ -36,6 +36,11 @@ global.lunch=false;
 //BECAUSE DANIEL MAKES MISTAKES SOMETIMES
 enemyStack=ds_queue_create()
 
+//holds respawning enemies
+global.enemyRespawnQueue = ds_queue_create();
+enemyRespawnDelay = 60;
+enemyRespawnTimer = 0;
+
 spawner0=noone;
 spawner1=noone;
 
@@ -97,6 +102,16 @@ if(spawnTimer=0)
     global.enemiesLiving++;
 }
 else if(spawnTimer!=-1)spawnTimer--
+
+if(enemyRespawnTimer &lt;= 0) {
+    if(!ds_queue_empty(global.enemyRespawnQueue)) {
+        enemyRespawnTimer = enemyRespawnDelay;
+        spawnTimer=spawnEnemy(spawner0,spawner1,ds_queue_dequeue(global.enemyRespawnQueue));
+    }
+} else {
+    enemyRespawnTimer--;
+}
+
 </string>
           </argument>
         </arguments>

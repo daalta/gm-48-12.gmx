@@ -48,6 +48,10 @@ switch(stackCommand)
     spawnedEnemy=instance_create(spawnX,spawnY,oEnemyHeavy);
     break;
     
+    case(4):
+    spawnedEnemy=instance_create(spawnX,spawnY,oEnemyBasic2);
+    break;
+    
     case(10):
     return 30;
     break;
