@@ -341,6 +341,7 @@ while(ds_queue_tail(enemyStack)!=99)//read actual file, line by line per level
     if(lineJustRead == 0) {
         show_debug_message("GameCrash: Invalid Ini File! Read 0 when reading enemiy spawns");
         game_end();
+        break;
     }
     ds_queue_enqueue(enemyStack,lineJustRead);
     enemyNumber++;
