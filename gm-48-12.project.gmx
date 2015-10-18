@@ -61,6 +61,7 @@
     <sprite>sprites\sCharDeathCeiling</sprite>
     <sprite>sprites\sPlatformCracks</sprite>
     <sprite>sprites\sNextTutorial</sprite>
+    <sprite>sprites\sIncoming</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background1</background>
@@ -133,6 +134,7 @@
     <object>objects\oLunch</object>
     <object>objects\oExit</object>
     <object>objects\oNextTutorial</object>
+    <object>objects\oSpielerspawner</object>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\timelineIntro</timeline>
