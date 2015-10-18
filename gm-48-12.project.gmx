@@ -142,11 +142,8 @@
   <rooms name="rooms">
     <room>rooms\rIntro</room>
     <room>rooms\rMainMenu</room>
-    <room>rooms\rLevelDefault</room>
     <room>rooms\rTut1</room>
-    <room>rooms\rLevel0</room>
-    <room>rooms\rLevel1</room>
-    <room>rooms\room0</room>
+    <room>rooms\rLevelDefault</room>
   </rooms>
   <constants number="16">
     <constant name="LAUNCHSPEED">-14</constant>

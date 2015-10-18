@@ -21,5 +21,13 @@
   <height>128</height>
   <frames>
     <frame index="0">images\sNextTutorial_0.png</frame>
+    <frame index="1">images\sNextTutorial_1.png</frame>
+    <frame index="2">images\sNextTutorial_2.png</frame>
+    <frame index="3">images\sNextTutorial_3.png</frame>
+    <frame index="4">images\sNextTutorial_4.png</frame>
+    <frame index="5">images\sNextTutorial_5.png</frame>
+    <frame index="6">images\sNextTutorial_6.png</frame>
+    <frame index="7">images\sNextTutorial_7.png</frame>
+    <frame index="8">images\sNextTutorial_8.png</frame>
   </frames>
 </sprite>
