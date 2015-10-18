@@ -47,6 +47,7 @@
   </sprites>
   <backgrounds name="background">
     <background>background\background1</background>
+    <background>background\bgMainMenu</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
