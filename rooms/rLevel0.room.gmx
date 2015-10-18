@@ -85,6 +85,7 @@
     <instance objName="oPlatformJump" x="960" y="160" name="inst_6DE748BD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oPlatformJump" x="480" y="288" name="inst_E3886EAD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oPlatformJump" x="640" y="288" name="inst_419EC322" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oEnemyBasic2" x="320" y="96" name="inst_48961D3B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="" x="640" y="672" w="16" h="16" xo="0" yo="0" id="10000001" name="inst_6FD672BA" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

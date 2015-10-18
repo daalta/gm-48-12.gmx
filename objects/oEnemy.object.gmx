@@ -47,6 +47,8 @@ hsp = moveSpeed;
 
 isJumpedOn = 0;
 
+suckTimer=30//time before being completely sucked into portal
+
 //Enemy Stats
 statImmuneToPlayer = false;
 
@@ -54,6 +56,7 @@ statImmuneToPlayer = false;
 statDamagesPlayerOnHit = false;
 statHarmless = false;
 state=moving;
+
 </string>
           </argument>
         </arguments>
@@ -201,6 +204,37 @@ var collider2 = instance_place(x, y, oPlayer);
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+      </action>
+    </event>
+    <event eventtype="4" ename="oExit">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>state=falling;
+image_angle+=15;
+
+move_towards_point(other.x,other.y,choose(5,4,3));
+
+if(suckTimer==0)
+{
+    instance_destroy()
+}else suckTimer--;
+</string>
+          </argument>
+        </arguments>
       </action>
     </event>
   </events>
