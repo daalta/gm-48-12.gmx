@@ -89,6 +89,8 @@
   </scripts>
   <fonts name="fonts">
     <font>fonts\fontMain</font>
+    <font>fonts\fontCredits2</font>
+    <font>fonts\fontCredits</font>
     <font>fonts\fontNormal</font>
   </fonts>
   <objects name="objects">
@@ -99,6 +101,7 @@
       <object>objects\oControlIntro</object>
       <object>objects\oScoreWidget</object>
       <object>objects\oLivesWidget</object>
+      <object>objects\oCredits</object>
     </objects>
     <objects name="Dynamic">
       <object>objects\oDynamic</object>
@@ -147,6 +150,7 @@
     <timeline>timelines\timelineIntro</timeline>
   </timelines>
   <rooms name="rooms">
+    <room>rooms\rCredits</room>
     <room>rooms\rIntro</room>
     <room>rooms\rMainMenu</room>
     <room>rooms\rTut1</room>

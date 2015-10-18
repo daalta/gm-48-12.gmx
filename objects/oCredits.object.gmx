@@ -25,25 +25,55 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///init align etc
-txtAlign = fa_right;
+            <string>///Initialize Credits
+
+xPos = room_width / 2;
+yt1 = 100;
+yt2 = 180;
+
+yct = 300;
+
+yc1 = 360;
+yc2 = 400;
+yc3 = 440;
+
+ymm = 620;
+
+cooldown = 60;
+animation = 0;
 </string>
           </argument>
         </arguments>
       </action>
+    </event>
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
-        <id>604</id>
-        <kind>0</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_inherited</functionname>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Check For MainMenu
+if(cooldown &lt;= 0) {
+    if(keyboard_check(vk_space)) {
+        room_goto(rIntro);
+    }
+} else {
+    cooldown--;
+}
+</string>
+          </argument>
+        </arguments>
       </action>
     </event>
     <event eventtype="8" enumb="0">
@@ -63,14 +93,34 @@ txtAlign = fa_right;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Draw score
-draw_set_font(fontNormal);
-draw_set_color(c_black);
-draw_set_halign(txtAlign);
+            <string>///Draw UI
+
+draw_set_colour(c_white);
+draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
-//unused
-//draw_text(x, y, "Score: " + string(score));
-//draw_text(room_width - 40, 40, "Score: " + string(score));
+
+animation = (animation + 0.04) % (2*pi);
+var offset1 = sin(animation);
+var offset2 = sin((animation + 0.5 * pi));
+var offset3 = sin((animation + 1 * pi));
+
+draw_set_font(fontCredits);
+
+draw_text(xPos, yt1, "Brain On The");
+draw_text(xPos, yt2, "Junkyard");
+
+draw_set_font(fontCredits2);
+
+draw_text(xPos, yct, "A game by:");
+
+draw_text(xPos + offset1 * 10, yc1, "Daniel T.");
+draw_text(xPos + offset2 * 10, yc2, "Felix W.");
+draw_text(xPos + offset3 * 10, yc3, "Jonas B.");
+
+
+draw_set_font(fontMain);
+
+draw_text(xPos, ymm + cooldown, "Press space to continue...");
 </string>
           </argument>
         </arguments>

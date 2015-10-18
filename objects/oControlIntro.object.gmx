@@ -110,19 +110,8 @@ xViewSpeed=0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///CheckFor Skip
-if(keyboard_check(vk_space)) {
-    spaceDownTimer--;
-    if(spaceDownTimer &lt;= 0) {
-        //Goto MainMenu
-        room_goto(rMainMenu);
-        //Stop music
-        audio_stop_sound(musicIntro);
-    }
-} else {
-    //Reset SpaceBar
-    spaceDownTimer = spaceDownTimerMax;
-}
+            <string>///Move Camera
+view_xview[0]+=xViewSpeed;
 </string>
           </argument>
         </arguments>
@@ -143,8 +132,19 @@ if(keyboard_check(vk_space)) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Move Camera
-view_xview[0]+=xViewSpeed;
+            <string>///CheckFor Skip
+if(keyboard_check(vk_space)) {
+    spaceDownTimer--;
+    if(spaceDownTimer &lt;= 0) {
+        //Goto MainMenu
+        room_goto(rMainMenu);
+        //Stop music
+        audio_stop_sound(musicIntro);
+    }
+} else {
+    //Reset SpaceBar
+    spaceDownTimer = spaceDownTimerMax;
+}
 </string>
           </argument>
         </arguments>
