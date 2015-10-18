@@ -94,10 +94,6 @@ state=moving;
 if(isJumpedOn &gt; 0) {
     isJumpedOn--;
 }
-
-
-//testweise: 4faches tempo in luft
-if(state==falling)x+=hsp*3;
 </string>
           </argument>
         </arguments>
@@ -120,9 +116,22 @@ if(state==falling)x+=hsp*3;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///add moveSpeed to hsp
+            <string>///enemy-specific steps
+if(state==idle)
+{
+    state=moving;
+    moveDirection*=-1;
+    image_xscale*=-1;
+}
 
 hsp=moveSpeed*moveDirection
+
+//tripe movespeed midair
+if(state==falling)
+{
+    hsp*=3;
+}
+
 </string>
           </argument>
         </arguments>
