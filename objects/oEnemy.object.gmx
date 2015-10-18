@@ -185,10 +185,10 @@ if(state != dead &amp;&amp; !isJumpedOn &amp;&amp; !statHarmless) {
 var collider2 = instance_place(x, y, oPlayer);
     if(collider2 != noone &amp;&amp; collider2.state &lt; dead) {
         if(collider2.bbox_bottom - ENEMY_COLLISION_THRESHOLD * 2 &gt; bbox_top) {
-            collider2.state = deadEnemy;
-            var deltaX = (collider.x - x) / 2;
-            var deltaY = (collider.y - y) / 2;
+            var deltaX = (collider2.x - x) / 2;
+            var deltaY = (collider2.y - y) / 2;
             instance_create(x + deltaX, y + deltaY, oExplosion);
+            collider2.state = deadEnemy;
         }
     }
 }
