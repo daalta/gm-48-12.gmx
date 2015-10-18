@@ -42,7 +42,6 @@
             <string>///set sprite variables
 image_speed = 0.15;
 image_index=0;
-image_xscale=1;
 color=0;//rainbox color of sprite
 </string>
           </argument>
@@ -67,6 +66,10 @@ color=0;//rainbox color of sprite
             <string>///set stats
 moveSpeed=4;
 moveDirection=image_xscale;
+
+statNextEnemy=ENEMY_ID_BASIC_3;
+
+statPoints = 4;
 </string>
           </argument>
         </arguments>
@@ -113,30 +116,6 @@ fallingLastFrame=5
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if(state=deadCeiling)
-{
-    instance_destroy();
-}
-</string>
-          </argument>
-        </arguments>
       </action>
     </event>
     <event eventtype="8" enumb="0">
@@ -211,7 +190,7 @@ if(image_index&lt;firstFrame||lastFrame+1&lt;=image_index)
           <argument>
             <kind>1</kind>
             <string>///draw sprite
-draw_sprite_ext(sEnemyBasic,image_index,x,y,moveDirection,1,0,make_color_hsv(color,255,255),1);
+draw_sprite_ext(sEnemyBasic,image_index,x,y,image_xscale,1,image_angle,make_color_hsv(color,255,255),1);
 color+=4;
 if(color&gt;254)color=0;
 </string>

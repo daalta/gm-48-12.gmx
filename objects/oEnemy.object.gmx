@@ -57,9 +57,37 @@ statDamagesPlayerOnHit = false;
 statHarmless = false;
 statPoints = 0;
 
+statNextEnemy = 0;
+
+
+//teleporting state id
+teleporting = -1;
 
 state=moving;
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///playteleportsound
+
+audio_play_sound(teleport, 0, 0);
 </string>
           </argument>
         </arguments>
@@ -96,7 +124,11 @@ state=moving;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(!place_meeting(x,y,oExit))
+            <string>///Reset JumpOn Timer
+if(isJumpedOn &gt; 0) {
+    isJumpedOn--;
+}
+if(!place_meeting(x,y,oExit))
 {
     shakeScreen(10,0.5,0.4);
 }
@@ -146,42 +178,6 @@ if(isJumpedOn &gt; 0) {
       </action>
     </event>
     <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>other</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///enemy-specific steps
-if(state==idle)
-{
-    state=moving;
-    moveDirection*=-1;
-    image_xscale*=-1;
-}
-
-hsp=moveSpeed*moveDirection
-
-//tripe movespeed midair
-if(state==falling)
-{
-    hsp*=3;
-}
-
-</string>
-          </argument>
-        </arguments>
-      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -255,7 +251,7 @@ if(state &lt; dead) {
           <argument>
             <kind>1</kind>
             <string>///Verify State and die
-if(state == deadCeiling)
+if((state == deadCeiling) || state == deadEnemy)
 {
     instance_destroy();
     score += statPoints
@@ -278,6 +274,43 @@ if(state == deadCeiling)
         <relative>0</relative>
         <isnot>0</isnot>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>other</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///enemy-specific steps
+if(state==idle)
+{
+    state=moving;
+    moveDirection*=-1;
+}
+
+if(moveDirection != 0) image_xscale=moveDirection;
+
+hsp=moveSpeed*moveDirection
+
+//tripe movespeed midair
+if(state==falling)
+{
+    hsp*=3;
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="4" ename="oExit">
       <action>
@@ -296,15 +329,21 @@ if(state == deadCeiling)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>state=falling;
+            <string>///Fall into teleporter
+
+//don't run away
+moveDirection = 0;
+
+//fall into the teleporter
+state=falling;
 image_angle+=15;
 
 move_towards_point(other.x,other.y,choose(5,8,12));
 
 if(suckTimer==0)
 {
-    
-    instance_destroy()
+    ds_queue_enqueue(global.enemyRespawnQueue, statNextEnemy);
+    instance_destroy();
 }
 else
 {

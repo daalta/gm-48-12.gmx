@@ -29,6 +29,11 @@
     <sound>sound\musicLevel</sound>
     <sound>sound\soundEnemyReachedExit</sound>
     <sound>sound\musicTutorial</sound>
+    <sound>sound\zerstampfen</sound>
+    <sound>sound\teleport</sound>
+    <sound>sound\explosionselbst</sound>
+    <sound>sound\explosiongegner</sound>
+    <sound>sound\sound9</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sPlatformNormal</sprite>
@@ -36,6 +41,8 @@
     <sprite>sprites\sPlayer</sprite>
     <sprite>sprites\sLaunch</sprite>
     <sprite>sprites\sEnemyBasic</sprite>
+    <sprite>sprites\sEnemyBasic2</sprite>
+    <sprite>sprites\sEnemyBasic3</sprite>
     <sprite>sprites\sControl</sprite>
     <sprite>sprites\sExplosion</sprite>
     <sprite>sprites\sSpawner</sprite>
@@ -43,7 +50,11 @@
     <sprite>sprites\sRespawn</sprite>
     <sprite>sprites\sWall</sprite>
     <sprite>sprites\sEnemyHelmet</sprite>
+    <sprite>sprites\sEnemyHelmet2</sprite>
+    <sprite>sprites\sEnemyHelmet3</sprite>
     <sprite>sprites\sEnemyHeavy</sprite>
+    <sprite>sprites\sEnemyHeavy2</sprite>
+    <sprite>sprites\sEnemyHeavy3</sprite>
     <sprites name="Gui">
       <sprite>sprites\sButton</sprite>
     </sprites>
@@ -92,8 +103,13 @@
         <object>objects\oEnemy</object>
         <object>objects\oEnemyBasic</object>
         <object>objects\oEnemyBasic2</object>
+        <object>objects\oEnemyBasic3</object>
         <object>objects\oEnemyHelmet</object>
+        <object>objects\oEnemyHelmet2</object>
+        <object>objects\oEnemyHelmet3</object>
         <object>objects\oEnemyHeavy</object>
+        <object>objects\oEnemyHeavy2</object>
+        <object>objects\oEnemyHeavy3</object>
       </objects>
     </objects>
     <objects name="Static">
@@ -130,7 +146,7 @@
     <room>rooms\rLevel1</room>
     <room>rooms\room0</room>
   </rooms>
-  <constants number="7">
+  <constants number="16">
     <constant name="LAUNCHSPEED">-14</constant>
     <constant name="KEYLEFT">vk_left</constant>
     <constant name="KEYRIGHT">vk_right</constant>
@@ -138,6 +154,15 @@
     <constant name="GRAVITY">0.7</constant>
     <constant name="ENEMY_COLLISION_THRESHOLD">3</constant>
     <constant name="ENEMY_BOUNCE_BACK">-8</constant>
+    <constant name="ENEMY_ID_BASIC">1</constant>
+    <constant name="ENEMY_ID_HELMET">2</constant>
+    <constant name="ENEMY_ID_HEAVY">3</constant>
+    <constant name="ENEMY_ID_BASIC_2">4</constant>
+    <constant name="ENEMY_ID_HELMET_2">5</constant>
+    <constant name="ENEMY_ID_HEAVY_2">6</constant>
+    <constant name="ENEMY_ID_BASIC_3">7</constant>
+    <constant name="ENEMY_ID_HELMET_3">8</constant>
+    <constant name="ENEMY_ID_HEAVY_3">9</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>
