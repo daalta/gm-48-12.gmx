@@ -29,6 +29,7 @@
 
 //launch all enemies?
 global.lunch=false;
+global.playerWon = false;
 
 
 //a stack to save all enemies to.
