@@ -34,6 +34,8 @@ fallingRotateSpeed=20//-Grad Rotation pro Frame wäghrend falling-State
 imageRotation = 0;
 
 animationTimer = 0; // Timer for animation
+
+lastDir = 1;
 </string>
           </argument>
         </arguments>
@@ -320,7 +322,9 @@ if(move!=0)
 {
     xscale=move;  
 }
-
+if(state != falling) {
+    lastDir = move;
+}
  
 switch(state)
 {  
@@ -340,7 +344,11 @@ switch(state)
         firstFrame=fallingFirstFrame;
         lastFrame=fallingLastFrame;
         image_speed=0.25;
-        imageRotation +=fallingRotateSpeed;
+        if(lastDir &gt;=0) {
+            imageRotation -=fallingRotateSpeed;
+        } else {
+            imageRotation +=fallingRotateSpeed;
+        }
         break;    
     case dead:
     case deadEnemy:
@@ -367,7 +375,7 @@ if(image_index &gt; lastFrame + 1 || image_index == 0)
     if(state &gt;= dead &amp;&amp; state != deadCorpse) {
         //dead body animation ends
         state = deadCorpse;
-        animationTimer = 120;
+        animationTimer = 60;
         image_index = lastFrame;
     } else {
         image_index = firstFrame;
