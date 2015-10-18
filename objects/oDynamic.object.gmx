@@ -128,7 +128,7 @@ if(global.lunch &amp;&amp; !statToHeavyToJump)
     if(rightCollision!=noone||leftCollision!=noone)
     {
         vsp = LAUNCHSPEED;
-        if(state != dead &amp;&amp; state != deadCeiling &amp;&amp; state != deadEnemy &amp;&amp; state != deadCorpse) {
+        if(state == idle || state == moving) {
             state = falling;
         }
     }
@@ -164,7 +164,7 @@ vsp += GRAVITY;
 if(place_meeting(x+hsp,y,oStatic))
 {
     //bounce horizontally from walls.
-    if(state=moving||place_meeting(x+hsp,y,oWall))state=idle;
+    if(state=moving|| (place_meeting(x+hsp,y,oWall) &amp;&amp; state == falling) )state=idle;
     
     
     while(!place_meeting(x+sign(hsp),y,oStatic))

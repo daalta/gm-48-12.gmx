@@ -45,7 +45,8 @@ moveSpeed = 4;
 moveDirection=image_xscale;
 image_speed=0.2;
 
-statPoints = 2000;
+statNextEnemy=ENEMY_ID_HELMET_3;
+statPoints = 8;
 
 </string>
           </argument>
@@ -123,7 +124,7 @@ if(image_index&lt;firstFrame||lastFrame+1&lt;=image_index)
           <argument>
             <kind>1</kind>
             <string>///draw sprite
-draw_sprite_ext(sEnemyHelmet2,image_index,x,y,moveDirection,1,0,c_white,1);
+draw_sprite_ext(sEnemyHelmet2,image_index,x,y,image_xscale,1,image_angle,c_white,1);
 </string>
           </argument>
         </arguments>

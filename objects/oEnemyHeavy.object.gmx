@@ -45,10 +45,28 @@ moveSpeed = 2;
 moveDirection=image_xscale;
 image_speed=0.125;
 
-statPoints = 2000;
+statPoints = 10;
+
+statNextEnemy=ENEMY_ID_HEAVY_2;
 </string>
           </argument>
         </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>604</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_inherited</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
       </action>
     </event>
   </events>
