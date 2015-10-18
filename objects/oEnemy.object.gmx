@@ -124,14 +124,16 @@ audio_play_sound(teleport, 0, 0);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Reset JumpOn Timer
-if(isJumpedOn &gt; 0) {
-    isJumpedOn--;
-}
+            <string>///Reset JumpOn Timer and reduce enemy count
+
 if(!place_meeting(x,y,oExit))
 {
     shakeScreen(10,0.5,0.4);
 }
+global.enemiesLiving--;
+
+
+
 </string>
           </argument>
         </arguments>
@@ -252,10 +254,6 @@ if(state &lt; dead) {
 if((state == deadCeiling) || state == deadEnemy || state == dead)
 {
     instance_destroy();
-    if(!state == dead) {
-        score += statPoints
-    }
-    global.enemiesLiving--;
 }
 </string>
           </argument>

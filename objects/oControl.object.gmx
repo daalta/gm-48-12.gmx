@@ -138,6 +138,7 @@ if(enemyRespawnTimer &lt;= 0) {
     if(!ds_queue_empty(global.enemyRespawnQueue)) {
         enemyRespawnTimer = enemyRespawnDelay;
         spawnTimer=spawnEnemy(spawner0,spawner1,ds_queue_dequeue(global.enemyRespawnQueue));
+        global.enemiesLiving++;
     }
 } else {
     enemyRespawnTimer--;
@@ -411,9 +412,17 @@ if(spawnerLocation1x!=-1)
 if(room=rTransition)
 {
     audio_stop_sound(musicTutorial);
+    if(!audio_is_playing(musicTransition))
+    {
+        audio_play_sound(musicTransition,0,1);
+    }
 }else if(room=rLevel1)
 {
+    audio_stop_sound(musicTransition);
+if(!audio_is_playing(musicLevel))
+    {
     audio_play_sound(musicLevel,0,1);
+    }
 }
 </string>
           </argument>

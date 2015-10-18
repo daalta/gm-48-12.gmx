@@ -52,8 +52,6 @@
   </views>
   <instances>
     <instance objName="oControl" x="96" y="64" name="inst_E8E7CA43" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oControl" x="96" y="64" name="inst_4281AF39" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oScoreWidget" x="1024" y="64" name="inst_E9444E23" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oNextTutorial" x="992" y="544" name="inst_1D03525D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oSpielerspawner" x="576" y="96" name="inst_8F5DD80F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oPlatformJump" x="320" y="256" name="inst_611DA577" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
