@@ -26,7 +26,7 @@ if(spawn0!=spawn1)
         spawnX=spawn1.x;
         spawnY=spawn1.y
         flipAfterSpawn=true;
-    }
+     }
 }
 show_debug_message("Stack command is "+string(stackCommand));
 //the big switch. decide how to interpret the popped command!
@@ -34,7 +34,7 @@ switch(stackCommand)
     {
     case(0):
     show_debug_message("Top stack command was 0. WTF.");
-    break;
+    return -2;
     
     case(1):
     spawnedEnemy=instance_create(spawnX,spawnY,oEnemyBasic);
