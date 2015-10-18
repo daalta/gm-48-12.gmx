@@ -179,15 +179,21 @@ if move==0&amp;&amp;state==moving state=idle //wenn wir uns nicht bewegen, idle 
 //We need to make sure it tells us if we are colliding with a jump platform.
 
 if(keyboard_check_pressed(KEYLAUNCH))
-    {
+{
     show_debug_message("SPACE PRESSED");
     leftCollision=collision_point(bbox_left,bbox_bottom+1,oPlatformJump,0,0);
     rightCollision=collision_point(bbox_right,bbox_bottom+1,oPlatformJump,0,0);
-    if(rightCollision!=noone||leftCollision!=noone)
-        {
+    if(rightCollision!=noone)
+    {
+        rightCollision.hp--;
         global.lunch=true;
-        }
     }
+    else if (leftCollision!=noone)
+    {
+        leftCollision.hp--;
+        global.lunch=true;
+    }
+}
 </string>
           </argument>
         </arguments>
