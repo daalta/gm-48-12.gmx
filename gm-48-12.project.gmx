@@ -99,11 +99,8 @@
     <object>objects\oDeathExplosion</object>
     <object>objects\oDummyPlayer</object>
     <object>objects\oDummyEnemy</object>
-<<<<<<< HEAD
     <object>objects\oLunch</object>
-=======
     <object>objects\oExit</object>
->>>>>>> edab867bfdcfa1006a3aff4fae20acc294bcf853
   </objects>
   <timelines name="timelines">
     <timeline>timelines\timelineIntro</timeline>
