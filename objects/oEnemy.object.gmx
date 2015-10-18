@@ -219,14 +219,12 @@ if(state &lt; dead) {
     
     //Kill player
     if(state != dead &amp;&amp; !isJumpedOn &amp;&amp; !statHarmless) {
-    var collider2 = instance_place(x, y, oPlayer);
+    var collider2 = collision_line(bbox_left, bbox_bottom, bbox_right, bbox_bottom, oPlayer, false, false);
         if(collider2 != noone &amp;&amp; collider2.state &lt; dead) {
-            if(collider2.bbox_bottom - ENEMY_COLLISION_THRESHOLD * 2 &gt; bbox_top) {
-                var deltaX = (collider2.x - x) / 2;
-                var deltaY = (collider2.y - y) / 2;
-                instance_create(x + deltaX, y + deltaY, oExplosion);
-                collider2.state = deadEnemy;
-            }
+            var deltaX = (collider2.x - x) / 2;
+            var deltaY = (collider2.y - y) / 2;
+            instance_create(x + deltaX, y + deltaY, oExplosion);
+            collider2.state = deadEnemy;
         }
     }
 }
