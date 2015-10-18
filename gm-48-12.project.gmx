@@ -156,6 +156,7 @@
     <room>rooms\rTransition</room>
     <room>rooms\rLevel1</room>
     <room>rooms\rLevel2</room>
+    <room>rooms\rLevel3</room>
     <room>rooms\rLevel99</room>
     <room>rooms\rLevelDefault</room>
   </rooms>

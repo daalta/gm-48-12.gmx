@@ -442,6 +442,10 @@ else if(room=rLevel2)
 {
     color=c_blue;
 }
+else if(room=rLevel3)
+{
+    color=c_olive;
+}
 
 else
 {
