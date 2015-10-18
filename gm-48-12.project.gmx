@@ -144,6 +144,7 @@
     <room>rooms\rIntro</room>
     <room>rooms\rMainMenu</room>
     <room>rooms\rTut1</room>
+    <room>rooms\rTut2</room>
     <room>rooms\rLevel1</room>
     <room>rooms\rLevelDefault</room>
   </rooms>
