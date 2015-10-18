@@ -28,5 +28,7 @@
     <frame index="5">images\sEnemyHelmet_5.png</frame>
     <frame index="6">images\sEnemyHelmet_6.png</frame>
     <frame index="7">images\sEnemyHelmet_7.png</frame>
+    <frame index="8">images\sEnemyHelmet_8.png</frame>
+    <frame index="9">images\sEnemyHelmet_9.png</frame>
   </frames>
 </sprite>

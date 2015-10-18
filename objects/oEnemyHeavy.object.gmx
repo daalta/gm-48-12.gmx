@@ -43,6 +43,7 @@
 statToHeavyToJump = true;
 moveSpeed = 2;
 moveDirection=image_xscale;
+image_speed=0.125;
 
 statPoints = 2000;
 </string>
