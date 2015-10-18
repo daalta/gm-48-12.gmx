@@ -101,7 +101,7 @@
     <room>rooms\rIntro</room>
   </rooms>
   <constants number="7">
-    <constant name="LAUNCHSPEED">-16</constant>
+    <constant name="LAUNCHSPEED">-14</constant>
     <constant name="KEYLEFT">vk_left</constant>
     <constant name="KEYRIGHT">vk_right</constant>
     <constant name="KEYLAUNCH">vk_space</constant>

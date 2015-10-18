@@ -39,9 +39,34 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed = 0.15;
+            <string>///set sprite variables
+image_speed = 0.15;
 image_index=0;
 image_xscale=1;
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///set stats
+moveSpeed=2;
+moveDirection=image_xscale;
 </string>
           </argument>
         </arguments>
@@ -105,7 +130,12 @@ fallingLastFrame=5
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>if(state==moving&amp;&amp;(xprevious=x&amp;&amp;yprevious=y))
+{
+    moveDirection*=-1;
+    image_angle*=-1;
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -142,8 +172,6 @@ fallingLastFrame=5
           <argument>
             <kind>1</kind>
             <string>///Animate
-///Animate
-show_debug_message("IMAGE INDEX: "+string(image_index));
 switch(state)
 {
     case moving:
@@ -160,7 +188,6 @@ switch(state)
 
 if(image_index&lt;firstFrame||lastFrame+1&lt;=image_index)
     {
-    show_debug_message("SET IMAGE INDEX TO "+string(firstFrame));
     image_index=firstFrame;
     }
 
@@ -185,7 +212,7 @@ if(image_index&lt;firstFrame||lastFrame+1&lt;=image_index)
           <argument>
             <kind>1</kind>
             <string>///draw sprite
-draw_sprite_ext(sEnemyBasic,image_index,x,y,1 * -walkDirection,1,0,c_white,1);
+draw_sprite_ext(sEnemyBasic,image_index,x,y,moveDirection,1,0,c_white,1);
 </string>
           </argument>
         </arguments>

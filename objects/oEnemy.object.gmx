@@ -41,9 +41,9 @@
             <kind>1</kind>
             <string>///Init values and stats
 
-walkSpeed = 1;
-walkDirection = 1;
-hsp = walkSpeed;
+moveSpeed = 0;
+moveDirection = 0;
+hsp = moveSpeed;
 
 isJumpedOn = 0;
 
@@ -53,6 +53,7 @@ statImmuneToPlayer = false;
 //unused stats
 statDamagesPlayerOnHit = false;
 statHarmless = false;
+state=moving;
 </string>
           </argument>
         </arguments>
@@ -93,6 +94,10 @@ statHarmless = false;
 if(isJumpedOn &gt; 0) {
     isJumpedOn--;
 }
+
+
+//testweise: 4faches tempo in luft
+if(state==falling)x+=hsp*3;
 </string>
           </argument>
         </arguments>
@@ -109,36 +114,15 @@ if(isJumpedOn &gt; 0) {
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>self</whoName>
+        <whoName>other</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Collision and movement
+            <string>///add moveSpeed to hsp
 
-//set speed (and direction)
-hsp = walkSpeed * walkDirection;
-
-//collide with wall to change direction
-var collider = place_meeting(x + hsp, y, oStatic);
-if(collider != 0) {
-    if(vsp == 0) {
-        //only change direction when walking
-        walkDirection = walkDirection * -1;
-    }
-    var dir = sign(hsp);
-    hsp=0 //Because we collided with the wall!
-    //Move until wall is perfectly touched
-    while(place_meeting(x + hsp + dir, y, oStatic) == 0)
-    {
-        hsp += dir;
-    }
-}
-
-if(state == idle) {
-    state = moving;
-}
+hsp=moveSpeed*moveDirection
 </string>
           </argument>
         </arguments>

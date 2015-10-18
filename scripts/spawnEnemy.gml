@@ -14,7 +14,7 @@ var spawnY //y location to spawn enemy at
 spawnedEnemy=noone //if we spawn an enemy we should save it in this variable
 flipAfterSpawn=false//true if using the second spawner
 
-if(random_range(0,2)==1) //radonmy decide which spawner to use
+if(random(100)>50) //radonmy decide which spawner to use
 {
     spawnX=spawn0.x;
     spawnY=spawn0.y;
@@ -96,7 +96,7 @@ switch(stackCommand)
 //if we reached this point we must have spawned an enemy
 if(flipAfterSpawn&&spawnedEnemy!=noone)
     {
-    spawnedEnemy.walkDirection*=-1;
+    spawnedEnemy.moveDirection*=-1;
     }
 
 return 0;
