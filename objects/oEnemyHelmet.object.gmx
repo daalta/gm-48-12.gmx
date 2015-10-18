@@ -43,10 +43,88 @@
 statImmuneToPlayer = true;
 moveSpeed = 2;
 moveDirection=image_xscale;
+image_speed=0.2;
 
 statPoints = 2000;
-
 statNextEnemy=ENEMY_ID_HELMET;
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>604</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_inherited</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Animate
+switch(state)
+{
+    case moving:
+    firstFrame=0;
+    lastFrame=7;
+    image_speed=0.15;
+    break;
+    case falling:
+    firstFrame=8;
+    lastFrame=9;
+    image_speed=0.1;
+    break;
+}
+
+if(image_index&lt;firstFrame||lastFrame+1&lt;=image_index)
+    {
+    image_index=firstFrame;
+    }
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///draw sprite
+draw_sprite_ext(sEnemyHelmet,image_index,x,y,moveDirection,1,0,c_white,1);
 </string>
           </argument>
         </arguments>

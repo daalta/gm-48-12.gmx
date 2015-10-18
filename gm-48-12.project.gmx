@@ -26,6 +26,8 @@
   <sounds name="sound">
     <sound>sound\soundLaunch</sound>
     <sound>sound\musicIntro</sound>
+    <sound>sound\musicLevel</sound>
+    <sound>sound\soundEnemyReachedExit</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sPlatformNormal</sprite>
@@ -33,6 +35,8 @@
     <sprite>sprites\sPlayer</sprite>
     <sprite>sprites\sLaunch</sprite>
     <sprite>sprites\sEnemyBasic</sprite>
+    <sprite>sprites\sEnemyBasic2</sprite>
+    <sprite>sprites\sEnemyBasic3</sprite>
     <sprite>sprites\sControl</sprite>
     <sprite>sprites\sExplosion</sprite>
     <sprite>sprites\sSpawner</sprite>
@@ -40,7 +44,11 @@
     <sprite>sprites\sRespawn</sprite>
     <sprite>sprites\sWall</sprite>
     <sprite>sprites\sEnemyHelmet</sprite>
+    <sprite>sprites\sEnemyHelmet2</sprite>
+    <sprite>sprites\sEnemyHelmet3</sprite>
     <sprite>sprites\sEnemyHeavy</sprite>
+    <sprite>sprites\sEnemyHeavy2</sprite>
+    <sprite>sprites\sEnemyHeavy3</sprite>
     <sprites name="Gui">
       <sprite>sprites\sButton</sprite>
     </sprites>
@@ -61,6 +69,7 @@
     <script>scripts\drawGuiButtonAnim.gml</script>
     <script>scripts\drawGuiButton.gml</script>
     <script>scripts\spawnEnemy.gml</script>
+    <script>scripts\shakeScreen.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fontMain</font>
@@ -83,8 +92,13 @@
         <object>objects\oEnemy</object>
         <object>objects\oEnemyBasic</object>
         <object>objects\oEnemyBasic2</object>
+        <object>objects\oEnemyBasic3</object>
         <object>objects\oEnemyHelmet</object>
+        <object>objects\oEnemyHelmet2</object>
+        <object>objects\oEnemyHelmet3</object>
         <object>objects\oEnemyHeavy</object>
+        <object>objects\oEnemyHeavy2</object>
+        <object>objects\oEnemyHeavy3</object>
       </objects>
     </objects>
     <objects name="Static">
@@ -112,9 +126,9 @@
     <timeline>timelines\timelineIntro</timeline>
   </timelines>
   <rooms name="rooms">
+    <room>rooms\rLevel0</room>
     <room>rooms\rIntro</room>
     <room>rooms\rMainMenu</room>
-    <room>rooms\rLevel0</room>
     <room>rooms\rLevel1</room>
     <room>rooms\room0</room>
   </rooms>
