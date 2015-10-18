@@ -291,7 +291,7 @@ if(state == deadCorpse) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room_goto_next()
+            <string>if(global.playerWon)room_goto_next()
 </string>
           </argument>
         </arguments>
