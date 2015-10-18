@@ -64,7 +64,7 @@ txtAlign = fa_right;
           <argument>
             <kind>1</kind>
             <string>///Draw score
-draw_set_font(fontMain);
+draw_set_font(fontNormal);
 draw_set_color(c_black);
 draw_set_halign(txtAlign);
 draw_set_valign(fa_middle);
