@@ -402,10 +402,13 @@ if(room=rTransition)
 }else if(room=rLevel1)
 {
     audio_stop_sound(musicTransition);
-if(!audio_is_playing(musicLevel))
+    if(!audio_is_playing(musicLevel))
     {
-    audio_play_sound(musicLevel,0,1);
+        audio_play_sound(musicLevel,0,1);
     }
+}else if(room=rLevel5)
+{
+    if(audio_is_playing(musicLevel))audio_stop_sound(musicLevel);
 }
 </string>
           </argument>
@@ -442,6 +445,15 @@ else if(room=rLevel2)
 {
     color=c_blue;
 }
+else if(room=rLevel3)
+{
+    color=c_olive;
+}
+else if(room=rLevel4)
+{
+    color=c_silver;
+}
+
 
 else
 {

@@ -33,6 +33,7 @@
     <sound>sound\zerstampfen</sound>
     <sound>sound\teleport</sound>
     <sound>sound\explosionselbst</sound>
+    <sound>sound\musicBoss</sound>
     <sound>sound\explosiongegner</sound>
     <sound>sound\sound9</sound>
     <sound>sound\musicTransition</sound>
@@ -66,6 +67,7 @@
     <sprite>sprites\sIncoming</sprite>
     <sprite>sprites\sYou</sprite>
     <sprite>sprites\sSpace</sprite>
+    <sprite>sprites\sLastLevelBox</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background1</background>
@@ -145,6 +147,7 @@
     <object>objects\oNextTutorial</object>
     <object>objects\oYou</object>
     <object>objects\oSpaceHere</object>
+    <object>objects\oLastLevelBox</object>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\timelineIntro</timeline>
@@ -152,7 +155,9 @@
   <rooms name="rooms">
     <room>rooms\rCredits</room>
     <room>rooms\rIntro</room>
+    <room>rooms\rLevel5</room>
     <room>rooms\rMainMenu</room>
+    <room>rooms\rIntro</room>
     <room>rooms\rTut1</room>
     <room>rooms\rTut2</room>
     <room>rooms\rTut3</room>
@@ -160,6 +165,8 @@
     <room>rooms\rTransition</room>
     <room>rooms\rLevel1</room>
     <room>rooms\rLevel2</room>
+    <room>rooms\rLevel3</room>
+    <room>rooms\rLevel4</room>
     <room>rooms\rLevel99</room>
     <room>rooms\rLevelDefault</room>
   </rooms>
