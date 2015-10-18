@@ -30,7 +30,7 @@ currentButton = 0;
 buttonCount = 2;
 
 firstFrame = 1;
-lastFrame = 4;
+lastFrame = 2;
 imageIndex = 0;
 imageSpeed = 0.3;
 

@@ -208,7 +208,6 @@ if(state &lt; dead) {
                     state = dead;
                     instance_destroy();
                     score += statPoints;
-                    global.enemiesLiving--;
                 }
                 if(statDamagesPlayerOnHit &amp;&amp; !isJumpedOn) {
                     collider.lives--;
