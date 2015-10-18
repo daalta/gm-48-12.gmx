@@ -99,6 +99,7 @@
   <rooms name="rooms">
     <room>rooms\rMainMenu</room>
     <room>rooms\rLevel0</room>
+    <room>rooms\rLevel1</room>
     <room>rooms\room0</room>
     <room>rooms\rIntro</room>
   </rooms>
