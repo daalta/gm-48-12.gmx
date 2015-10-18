@@ -53,7 +53,6 @@
   <instances>
     <instance objName="oControl" x="96" y="64" name="inst_E8E7CA43" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oControl" x="96" y="64" name="inst_4281AF39" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oPlayer" x="288" y="416" name="inst_D7B8083D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oPlatformJump" x="672" y="448" name="inst_A34B2C6D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oPlatformNormal" x="0" y="608" name="inst_B205E534" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oScoreWidget" x="1024" y="64" name="inst_E9444E23" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -85,6 +84,7 @@
     <instance objName="oPlatformNormal" x="512" y="448" name="inst_CDCC8F58" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oPlatformNormal" x="352" y="448" name="inst_8F3F1A3E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oPlatformNormal" x="864" y="352" name="inst_6AEE6BC0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oSpielerspawner" x="288" y="416" name="inst_8F5DD80F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

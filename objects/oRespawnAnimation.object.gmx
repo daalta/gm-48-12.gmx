@@ -29,7 +29,7 @@
 image_speed=0.42;
 lastImage = 8;
 respawning = false;
-respawnTimer = 60;
+respawnTimer = 30;
 </string>
           </argument>
         </arguments>

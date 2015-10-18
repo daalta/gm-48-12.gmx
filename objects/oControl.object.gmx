@@ -128,7 +128,9 @@ if(spawnTimer=0)
 {
 
     spawnTimer=spawnEnemy(spawner0,spawner1,ds_queue_dequeue(enemyStack));
-    global.enemiesLiving++;
+    if(spawnTimer == 0) {
+        global.enemiesLiving++;
+    }
 }
 else if(spawnTimer!=-1)spawnTimer--
 

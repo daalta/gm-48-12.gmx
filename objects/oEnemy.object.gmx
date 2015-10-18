@@ -255,6 +255,7 @@ if((state == deadCeiling) || state == deadEnemy)
 {
     instance_destroy();
     score += statPoints
+    global.enemiesLiving--;
 }
 </string>
           </argument>
