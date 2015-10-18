@@ -169,19 +169,24 @@ view_xview[0]+=xViewSpeed;
             <kind>1</kind>
             <string>///Draw Skip hint when soace is pressed
 if(keyboard_check(vk_space)) {
-    var currrentViewX = view_xview[view_current];
-    var currrentViewY = view_yview[view_current];
-    var currrentViewXSize = view_wview[view_current];
-    var currrentViewYSize = view_hview[view_current];
-    var xPos = currrentViewX + currrentViewXSize / 2;
-    var yPos = currrentViewY + currrentViewYSize - 80;
+    var currentViewX = view_xview[view_current];
+    var currentViewY = view_yview[view_current];
+    var currentViewXSize = view_wview[view_current];
+    var currentViewYSize = view_hview[view_current];
+    
+    
+    var scale = currentViewXSize / room_width;
+    var xPos = currentViewX + currentViewXSize / 2;
+    var yPos = currentViewY + currentViewYSize - 80 * scale;
+    
     
     draw_set_font(fontMain);
     draw_set_colour(c_white);
     draw_set_halign(fa_center);
     draw_set_valign(fa_middle);
     
-    draw_text(xPos, yPos, "Hold Space to skip.");
+//    draw_text(xPos, yPos, "Hold Space to skip.");
+    draw_text_transformed(xPos, yPos, "Hold Space to skip.", scale, scale, 0);
 }
 </string>
           </argument>

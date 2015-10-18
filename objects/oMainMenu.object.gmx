@@ -58,11 +58,12 @@ xPos = room_width / 2 - 128;
           <argument>
             <kind>1</kind>
             <string>///Mouse Integration???
+/*
 if(mouse_x &gt; xPos || mouse_x &lt; xPos + 256) {
     if(mouse_y &gt; 100 &amp;&amp; mouse_y &lt; 164) {
         event_perform(ev_keypress, vk_enter);
     }
-}
+}*/
 </string>
           </argument>
         </arguments>
