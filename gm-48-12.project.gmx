@@ -99,6 +99,7 @@
       <object>objects\oDynamic</object>
       <objects name="Player">
         <object>objects\oPlayer</object>
+        <object>objects\oSpielerspawner</object>
       </objects>
       <objects name="Enemy">
         <object>objects\oEnemy</object>
@@ -127,14 +128,13 @@
       <object>objects\oExplosion</object>
       <object>objects\oRespawnAnimation</object>
     </objects>
-    <object>objects\oDummyPlayer</object>
     <objects name="Dummy">
       <object>objects\oDummyEnemy</object>
+      <object>objects\oDummyPlayer</object>
     </objects>
     <object>objects\oLunch</object>
     <object>objects\oExit</object>
     <object>objects\oNextTutorial</object>
-    <object>objects\oSpielerspawner</object>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\timelineIntro</timeline>

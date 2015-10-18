@@ -251,10 +251,12 @@ if(state &lt; dead) {
           <argument>
             <kind>1</kind>
             <string>///Verify State and die
-if((state == deadCeiling) || state == deadEnemy)
+if((state == deadCeiling) || state == deadEnemy || state == dead)
 {
     instance_destroy();
-    score += statPoints
+    if(!state == dead) {
+        score += statPoints
+    }
     global.enemiesLiving--;
 }
 </string>

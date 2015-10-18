@@ -322,7 +322,7 @@ if(move!=0)
 {
     xscale=move;  
 }
-if(state != falling) {
+if(state != falling &amp;&amp; move != 0) {
     lastDir = move;
 }
  

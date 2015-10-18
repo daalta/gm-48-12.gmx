@@ -15,7 +15,7 @@
 //12=2 seconds
 //13=3 seconds
 //...
-//20=20 seconds
+//20=10 seconds
 
 ini_open(spawn.ini);
 
