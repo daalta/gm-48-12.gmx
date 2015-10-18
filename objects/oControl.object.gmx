@@ -64,11 +64,12 @@ global.enemiesLiving = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Screenshake stuff
+            <string>///Screenshake stuff1
 
-global.screenshakeStrength=20;
-global.screenshakeSpeed=2;
-global.screenshakeDecay=0.1; 
+global.screenshakeStrength=0;//all these global variables are modified in the screenshake script
+global.screenshakeSpeed=0.5;
+global.screenshakeDecay=0.5; 
+screenshakeCounter=0;
 </string>
           </argument>
         </arguments>
@@ -145,6 +146,47 @@ else if(spawnTimer!=-1)spawnTimer--
           <argument>
             <kind>1</kind>
             <string>//screenshake
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Shake screen if 
+
+
+view_yview=sin(screenshakeCounter*global.screenshakeSpeed)*global.screenshakeStrength
+
+
+//von 0 bis 59 in 60 frames
+
+
+
+//oszilliert zwischen 0 und 1
+if(global.screenshakeStrength&lt;=0)
+{
+    global.screenshakeStrength=0;
+    screenshakeCounter=0;
+}
+else 
+{
+    global.screenshakeStrength-=global.screenshakeDecay;
+    screenshakeCounter++;
+}
 </string>
           </argument>
         </arguments>
