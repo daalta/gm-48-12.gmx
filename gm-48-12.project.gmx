@@ -36,6 +36,7 @@
     <sprite>sprites\sControl</sprite>
     <sprite>sprites\sExplosion</sprite>
     <sprite>sprites\sSpawner</sprite>
+    <sprite>sprites\sExit</sprite>
     <sprite>sprites\sRespawn</sprite>
     <sprite>sprites\sWall</sprite>
     <sprite>sprites\sEnemyHelmet</sprite>
@@ -44,10 +45,15 @@
       <sprite>sprites\sButton</sprite>
     </sprites>
     <sprite>sprites\sCharDeathCeiling</sprite>
+    <sprite>sprites\sPlatformCracks</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background1</background>
     <background>background\bgMainMenu</background>
+    <background>background\backLayer1</background>
+    <background>background\backLayer2</background>
+    <background>background\backLayer3</background>
+    <background>background\backLayer4</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -74,6 +80,7 @@
       <objects name="Enemy">
         <object>objects\oEnemy</object>
         <object>objects\oEnemyBasic</object>
+        <object>objects\oEnemyBasic2</object>
         <object>objects\oEnemyHelmet</object>
         <object>objects\oEnemyHeavy</object>
       </objects>
@@ -96,6 +103,8 @@
     <objects name="Dummy">
       <object>objects\oDummyEnemy</object>
     </objects>
+    <object>objects\oLunch</object>
+    <object>objects\oExit</object>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\timelineIntro</timeline>
@@ -104,6 +113,7 @@
     <room>rooms\rIntro</room>
     <room>rooms\rMainMenu</room>
     <room>rooms\rLevel0</room>
+    <room>rooms\rLevel1</room>
     <room>rooms\room0</room>
   </rooms>
   <constants number="7">

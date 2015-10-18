@@ -14,16 +14,19 @@ var spawnY //y location to spawn enemy at
 spawnedEnemy=noone //if we spawn an enemy we should save it in this variable
 flipAfterSpawn=false//true if using the second spawner
 
-if(random(100)>50) //radonmy decide which spawner to use
+if(spawn0!=spawn1)
 {
-    spawnX=spawn0.x;
-    spawnY=spawn0.y;
-}
-else
-{
-    spawnX=spawn1.x;
-    spawnY=spawn1.y
-    flipAfterSpawn=true;
+    if(random(100)>50) //randonly decide which spawner to use
+    {
+        spawnX=spawn0.x;
+        spawnY=spawn0.y;
+    }
+    else
+    {
+        spawnX=spawn1.x;
+        spawnY=spawn1.y
+        flipAfterSpawn=true;
+    }
 }
 show_debug_message("Stack command is "+string(stackCommand));
 //the big switch. decide how to interpret the popped command!
