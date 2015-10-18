@@ -153,11 +153,11 @@
     <timeline>timelines\timelineIntro</timeline>
   </timelines>
   <rooms name="rooms">
+    <room>rooms\rLevel4</room>
     <room>rooms\rCredits</room>
     <room>rooms\rIntro</room>
     <room>rooms\rLevel5</room>
     <room>rooms\rMainMenu</room>
-    <room>rooms\rIntro</room>
     <room>rooms\rTut1</room>
     <room>rooms\rTut2</room>
     <room>rooms\rTut3</room>
@@ -166,7 +166,6 @@
     <room>rooms\rLevel1</room>
     <room>rooms\rLevel2</room>
     <room>rooms\rLevel3</room>
-    <room>rooms\rLevel4</room>
     <room>rooms\rLevel99</room>
     <room>rooms\rLevelDefault</room>
   </rooms>
