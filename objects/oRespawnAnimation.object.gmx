@@ -57,6 +57,7 @@ respawnTimer = 60;
 if(respawning) {
     respawnTimer--;
     if(respawnTimer &lt;= 0) {
+        score *= 0.75;
         room_restart();
         instance_destroy();
     }
