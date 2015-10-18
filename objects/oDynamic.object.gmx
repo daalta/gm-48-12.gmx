@@ -127,7 +127,7 @@ if(global.lunch &amp;&amp; !statToHeavyToJump)
     if(rightCollision!=noone||leftCollision!=noone)
     {
         vsp = LAUNCHSPEED;
-        if(state != dead &amp;&amp; state != deadCeiling &amp;&amp; state != deadEnemy) {
+        if(state != dead &amp;&amp; state != deadCeiling &amp;&amp; state != deadEnemy &amp;&amp; state != deadCorpse) {
             state = falling;
         }
     }
