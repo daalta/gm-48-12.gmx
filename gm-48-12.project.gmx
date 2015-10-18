@@ -92,6 +92,7 @@
     <object>objects\oDeathExplosion</object>
     <object>objects\oDummyPlayer</object>
     <object>objects\oDummyEnemy</object>
+    <object>objects\oLunch</object>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\timelineIntro</timeline>
