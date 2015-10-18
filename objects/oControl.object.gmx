@@ -128,7 +128,9 @@ if(spawnTimer=0)
 {
 
     spawnTimer=spawnEnemy(spawner0,spawner1,ds_queue_dequeue(enemyStack));
-    global.enemiesLiving++;
+    if(spawnTimer == 0) {
+        global.enemiesLiving++;
+    }
 }
 else if(spawnTimer!=-1)spawnTimer--
 
@@ -280,6 +282,7 @@ if(keyboard_check(vk_shift)) {
             <kind>1</kind>
             <string>/// GOTO MainMenu
 room_goto(rMainMenu);
+audio_stop_all();
 </string>
           </argument>
         </arguments>
