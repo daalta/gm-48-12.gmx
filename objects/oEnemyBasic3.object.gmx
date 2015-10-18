@@ -65,7 +65,7 @@ color=0;//rainbox color of sprite
           <argument>
             <kind>1</kind>
             <string>///set stats
-moveSpeed=4;
+moveSpeed=6;
 moveDirection=image_xscale;
 </string>
           </argument>
@@ -211,7 +211,7 @@ if(image_index&lt;firstFrame||lastFrame+1&lt;=image_index)
           <argument>
             <kind>1</kind>
             <string>///draw sprite
-draw_sprite_ext(sEnemyBasic2,image_index,x,y,moveDirection,1,0,c_white,1);
+draw_sprite_ext(sEnemyBasic3,image_index,x,y,moveDirection,1,0,c_white,1);
 </string>
           </argument>
         </arguments>
