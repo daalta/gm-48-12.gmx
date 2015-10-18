@@ -28,6 +28,7 @@
     <sound>sound\musicIntro</sound>
     <sound>sound\musicLevel</sound>
     <sound>sound\soundEnemyReachedExit</sound>
+    <sound>sound\musicTutorial</sound>
     <sound>sound\zerstampfen</sound>
     <sound>sound\teleport</sound>
     <sound>sound\explosionselbst</sound>
@@ -59,6 +60,8 @@
     </sprites>
     <sprite>sprites\sCharDeathCeiling</sprite>
     <sprite>sprites\sPlatformCracks</sprite>
+    <sprite>sprites\sNextTutorial</sprite>
+    <sprite>sprites\sIncoming</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background1</background>
@@ -67,6 +70,10 @@
     <background>background\backLayer2</background>
     <background>background\backLayer3</background>
     <background>background\backLayer4</background>
+    <background>background\gamelayer1</background>
+    <background>background\gamelayer2</background>
+    <background>background\gamelayer3</background>
+    <background>background\gamelayer4</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -126,14 +133,18 @@
     </objects>
     <object>objects\oLunch</object>
     <object>objects\oExit</object>
+    <object>objects\oNextTutorial</object>
+    <object>objects\oSpielerspawner</object>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\timelineIntro</timeline>
   </timelines>
   <rooms name="rooms">
-    <room>rooms\rMainMenu</room>
-    <room>rooms\rLevel0</room>
     <room>rooms\rIntro</room>
+    <room>rooms\rMainMenu</room>
+    <room>rooms\rLevelDefault</room>
+    <room>rooms\rTut1</room>
+    <room>rooms\rLevel0</room>
     <room>rooms\rLevel1</room>
     <room>rooms\room0</room>
   </rooms>
