@@ -408,10 +408,12 @@ if(spawnerLocation1x!=-1)
           <argument>
             <kind>1</kind>
             <string>///change from tut level music to main music
-if(room=rLevel1)
+if(room=rTransition)
 {
     audio_stop_sound(musicTutorial);
-    audio_sound_gain(musicLevel,1,0);
+}else if(room=rLevel1)
+{
+    audio_play_sound(musicLevel,0,1);
 }
 </string>
           </argument>

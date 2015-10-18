@@ -141,10 +141,14 @@
     <timeline>timelines\timelineIntro</timeline>
   </timelines>
   <rooms name="rooms">
+    <room>rooms\rTransition</room>
     <room>rooms\rIntro</room>
     <room>rooms\rMainMenu</room>
     <room>rooms\rTut1</room>
     <room>rooms\rTut2</room>
+    <room>rooms\rTut3</room>
+    <room>rooms\rTut4</room>
+    <room>rooms\rLevel99</room>
     <room>rooms\rLevel1</room>
     <room>rooms\rLevelDefault</room>
   </rooms>
