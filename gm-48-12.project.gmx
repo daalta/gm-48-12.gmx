@@ -64,6 +64,8 @@
     <sprite>sprites\sPlatformCracks</sprite>
     <sprite>sprites\sNextTutorial</sprite>
     <sprite>sprites\sIncoming</sprite>
+    <sprite>sprites\sYou</sprite>
+    <sprite>sprites\sSpace</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background1</background>
@@ -138,6 +140,8 @@
     <object>objects\oLunch</object>
     <object>objects\oExit</object>
     <object>objects\oNextTutorial</object>
+    <object>objects\oYou</object>
+    <object>objects\oSpaceHere</object>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\timelineIntro</timeline>
