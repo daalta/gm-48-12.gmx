@@ -109,7 +109,8 @@ fallingLastFrame=2;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//game_restart();
+            <string>///unused
+//game_restart();
 </string>
           </argument>
         </arguments>
@@ -300,21 +301,21 @@ switch(state)
     case idle:
         firstFrame=idleFirstFrame;
         lastFrame=idleLastFrame;
-        image_speed=0.05
+        image_speed=0.05;
         imageRotation =0;
-    break;
+        break;
     case moving:
         firstFrame=movingFirstFrame;
         lastFrame=movingLastFrame;
-        image_speed=0.5
+        image_speed=0.5;
         imageRotation =0;
-    break;
+        break;
     case falling:
         firstFrame=fallingFirstFrame;
         lastFrame=fallingLastFrame;
-        image_speed=0.25
+        image_speed=0.25;
         imageRotation +=fallingRotateSpeed;
-    break;    
+        break;    
     case dead:
     case deadEnemy:
     case deadCeiling:
@@ -322,33 +323,37 @@ switch(state)
         lastFrame=deadCeilingLastFrame;
         image_speed=0.25;
         imageRotation=0;
-    break;
+        break;
     case deadCorpse:
         firstFrame=deadCeilingLastFrame;
         lastFrame=deadCeilingLastFrame;
         image_speed=0;
         imageRotation=0;
         image_index=firstFrame;
+        break;
 }
  
-//Loope nur die Bilder, die von firstFrame zu lastFrame reichen
-if(image_index &lt; firstFrame) {
-    image_index=firstFrame;
-}
+
 //if(lastFrame + 1 &lt;= image_index)
-if(image_index + 1 &gt; lastFrame) 
+if(image_index &gt; lastFrame + 1 || image_index == 0) 
 {
     //if(state == dead || state == deadCeilin
-    if(state &gt; dead &amp;&amp; state != deadCorpse) {
+    if(state &gt;= dead &amp;&amp; state != deadCorpse) {
         //dead body animation ends
         state = deadCorpse;
         animationTimer = 120;
         image_index = lastFrame;
     } else {
-        image_index=firstFrame;
+        image_index = firstFrame;
     }
 }
- 
+
+//Loope nur die Bilder, die von firstFrame zu lastFrame reichen
+if(image_index &lt; firstFrame) {
+    image_index = firstFrame;
+}
+
+//show_debug_message("state: " + string(state));
 draw_sprite_ext(sPlayer,image_index,x,y,xscale,1,imageRotation,c_white,1);
 </string>
           </argument>
