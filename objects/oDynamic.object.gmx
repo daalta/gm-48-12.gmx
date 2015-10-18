@@ -94,6 +94,7 @@ statToHeavyToJump = false;
             <kind>1</kind>
             <string>///Explosion
 instance_create(x, y, oExplosion);
+audio_play_sound(explosiongegner, 0, 0);
 </string>
           </argument>
         </arguments>
