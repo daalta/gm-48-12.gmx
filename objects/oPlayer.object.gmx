@@ -264,6 +264,7 @@ if(state == deadCorpse) {
     animationTimer--;
     if(animationTimer &lt;= 0) {
         instance_create(x, y, oRespawnAnimation);
+        audio_play_sound(explosionselbst, 0, 0);
         instance_destroy();
     }
 }
@@ -353,6 +354,10 @@ if(image_index &gt; lastFrame + 1 || image_index == 0)
 //Loope nur die Bilder, die von firstFrame zu lastFrame reichen
 if(image_index &lt; firstFrame) {
     image_index = firstFrame;
+    if(state&gt;=dead)
+    {
+        audio_play_sound(sound9, 0, 0);
+    }
 }
 
 //show_debug_message("state: " + string(state));

@@ -28,6 +28,11 @@
     <sound>sound\musicIntro</sound>
     <sound>sound\musicLevel</sound>
     <sound>sound\soundEnemyReachedExit</sound>
+    <sound>sound\zerstampfen</sound>
+    <sound>sound\teleport</sound>
+    <sound>sound\explosionselbst</sound>
+    <sound>sound\explosiongegner</sound>
+    <sound>sound\sound9</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sPlatformNormal</sprite>
