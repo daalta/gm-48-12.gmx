@@ -45,9 +45,9 @@ moveSpeed = 2;
 moveDirection=image_xscale;
 image_speed=0.125;
 
-statPoints = 2000;
+statPoints = 10;
 
-statNextEnemy=ENEMY_ID_HEAVY;
+statNextEnemy=ENEMY_ID_HEAVY_2;
 </string>
           </argument>
         </arguments>

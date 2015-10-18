@@ -45,12 +45,28 @@ moveSpeed = 2;
 moveDirection=image_xscale;
 image_speed=0.2;
 
-statPoints = 2000;
-statNextEnemy=ENEMY_ID_HELMET;
+statPoints = 8;
+statNextEnemy=ENEMY_ID_HELMET_2;
 
 </string>
           </argument>
         </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>604</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_inherited</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
       </action>
     </event>
     <event eventtype="8" enumb="0">
@@ -124,26 +140,10 @@ if(image_index&lt;firstFrame||lastFrame+1&lt;=image_index)
           <argument>
             <kind>1</kind>
             <string>///draw sprite
-draw_sprite_ext(sEnemyHelmet,image_index,x,y,moveDirection,1,0,c_white,1);
+draw_sprite_ext(sEnemyHelmet,image_index,x,y,image_xscale,1,image_angle,c_white,1);
 </string>
           </argument>
         </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>604</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_inherited</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
       </action>
     </event>
   </events>

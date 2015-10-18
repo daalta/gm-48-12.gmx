@@ -165,44 +165,6 @@ if(isJumpedOn &gt; 0) {
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>other</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///enemy-specific steps
-if(state==idle)
-{
-    state=moving;
-    moveDirection*=-1;
-    image_xscale*=-1;
-}
-
-hsp=moveSpeed*moveDirection
-
-//tripe movespeed midair
-if(state==falling)
-{
-    hsp*=3;
-}
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>

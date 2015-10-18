@@ -34,7 +34,8 @@ lastFrame = 4;
 imageIndex = 0;
 imageSpeed = 0.3;
 
-xPos = room_width / 2 - 128;
+xPos = room_width / 2 + 352;
+yPos = 500;
 </string>
           </argument>
         </arguments>
@@ -97,10 +98,8 @@ if(image_index &lt; firstFrame || image_index &gt;= lastFrame + 1)
     image_index = firstFrame;
 }
 
-var xPos = room_width / 2 + 300;
-
-drawGuiButtonAnim(xPos, 100, imageIndex, "Play Game", currentButton == 0);
-drawGuiButtonAnim(xPos, 180, imageIndex, "Leave", currentButton == 1);
+drawGuiButtonAnim(xPos, yPos, imageIndex, "Play Game", currentButton == 0);
+drawGuiButtonAnim(xPos, yPos + 80, imageIndex, "Leave", currentButton == 1);
 
 </string>
           </argument>
