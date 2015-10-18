@@ -64,6 +64,7 @@
       <object>objects\oControl</object>
       <object>objects\oMainMenu</object>
       <object>objects\oControlTest</object>
+      <object>objects\oControlIntro</object>
     </objects>
     <objects name="Dynamic">
       <object>objects\oDynamic</object>
@@ -89,7 +90,6 @@
     <object>objects\oExplosion</object>
     <object>objects\oSpawner</object>
     <object>objects\oDeathExplosion</object>
-    <object>objects\oIntro</object>
     <object>objects\oDummyPlayer</object>
     <object>objects\oDummyEnemy</object>
   </objects>
@@ -97,11 +97,11 @@
     <timeline>timelines\timelineIntro</timeline>
   </timelines>
   <rooms name="rooms">
+    <room>rooms\rIntro</room>
     <room>rooms\rMainMenu</room>
     <room>rooms\rLevel0</room>
     <room>rooms\rLevel1</room>
     <room>rooms\room0</room>
-    <room>rooms\rIntro</room>
   </rooms>
   <constants number="7">
     <constant name="LAUNCHSPEED">-14</constant>
