@@ -40,8 +40,6 @@ yPos = 500;
           </argument>
         </arguments>
       </action>
-    </event>
-    <event eventtype="6" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -58,13 +56,10 @@ yPos = 500;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Mouse Integration???
-/*
-if(mouse_x &gt; xPos || mouse_x &lt; xPos + 256) {
-    if(mouse_y &gt; 100 &amp;&amp; mouse_y &lt; 164) {
-        event_perform(ev_keypress, vk_enter);
-    }
-}*/
+            <string>virtual_key_add(0,0,window_get_width()/4,window_get_height(),KEYLEFT);
+virtual_key_add(window_get_width()/4,0,window_get_width()/4,window_get_height(),KEYRIGHT);
+virtual_key_add(window_get_width()/2,0,window_get_width()/2,window_get_height(),vk_space);
+
 </string>
           </argument>
         </arguments>
@@ -101,6 +96,38 @@ if(image_index &lt; firstFrame || image_index &gt;= lastFrame + 1)
 drawGuiButtonAnim(xPos, yPos, imageIndex, "Play Game", currentButton == 0);
 drawGuiButtonAnim(xPos, yPos + 80, imageIndex, "Leave", currentButton == 1);
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///stretch background
+background_xscale[0]=4;
+background_xscale[1]=4;
+background_xscale[2]=4;
+background_xscale[3]=4;
+background_xscale[4]=2;
+
+background_yscale[0]=4;
+background_yscale[1]=4;
+background_yscale[2]=4;
+background_yscale[3]=4;
+background_yscale[4]=2;
 </string>
           </argument>
         </arguments>

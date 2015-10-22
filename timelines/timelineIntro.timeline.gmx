@@ -234,7 +234,7 @@ audio_play_sound(soundFart,0,0);
     </event>
   </entry>
   <entry>
-    <step>1295</step>
+    <step>1265</step>
     <event>
       <action>
         <libid>1</libid>

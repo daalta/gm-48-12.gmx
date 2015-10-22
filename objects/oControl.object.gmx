@@ -80,6 +80,36 @@ screenshakeCounter=0;
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///stretch background
+background_xscale[0]=4;
+background_xscale[1]=4;
+background_xscale[2]=4;
+background_xscale[3]=4;
+
+background_yscale[0]=4;
+background_yscale[1]=4;
+background_yscale[2]=4;
+background_yscale[3]=4;
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="3" enumb="2">
       <action>
@@ -464,6 +494,43 @@ background_blend[0]=color;
 background_blend[1]=color;
 background_blend[2]=color;
 background_blend[3]=color;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Virtual keys for android
+
+if(room==rMainMenu)
+{
+    virtual_key_add(0,0,window_get_width(),window_get_height()/2,vk_up);
+    virtual_key_add(0,window_get_height()/2,window_get_width(),window_get_height()/2,vk_down);
+} 
+else if (room==rCredits||room==rIntro)
+{
+        virtual_key_add(0,0,window_get_width(),window_get_height(),vk_space);
+}
+else
+{
+    virtual_key_add(0,0,window_get_width()/8,window_get_height(),KEYLEFT);
+    virtual_key_add(window_get_width()/8,0,window_get_width()*(3/8),window_get_height(),KEYRIGHT);
+    virtual_key_add(window_get_width()/2,0,window_get_width()/2,window_get_height(),KEYLAUNCH);
+}
 </string>
           </argument>
         </arguments>
