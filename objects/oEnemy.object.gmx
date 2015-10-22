@@ -226,6 +226,7 @@ if(state &lt; dead) {
             var deltaY = (collider2.y - y) / 2;
             instance_create(x + deltaX, y + deltaY, oExplosion);
             collider2.state = deadEnemy;
+            collider2.sprite_index=sCharDeathCeiling;
         }
     }
 }

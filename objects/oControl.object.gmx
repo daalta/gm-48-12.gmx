@@ -243,7 +243,7 @@ else
 
 if(spawnTimer == -1 &amp;&amp; global.enemiesLiving &lt;= 0) {
     global.playerWon = true;
-}
+}else global.playerWon=false;
 </string>
           </argument>
         </arguments>

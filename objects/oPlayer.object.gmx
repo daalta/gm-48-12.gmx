@@ -69,7 +69,7 @@ movingLastFrame=10;
 
 //Dead by Ceiling
 deadCeilingFirstFrame=11;
-deadCeilingLastFrame=19;
+deadCeilingLastFrame=15;
 
 
 //Falling: Not colliding with any ground currently
@@ -263,6 +263,7 @@ hsp=(walkSpeed*move)
             <kind>1</kind>
             <string>///Tod
 if(state == deadCorpse) {
+    image_speed=1;
     animationTimer--;
     if(animationTimer &lt;= 0) {
         instance_create(x, y, oRespawnAnimation);
@@ -271,6 +272,33 @@ if(state == deadCorpse) {
     }
 }
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///spin if going to next level! and go to next level.
+
+if(goingToNextLevel)
+{   
+    if(y&lt;=-700)room_goto_next();
+    image_angle+=15;
+}
 </string>
           </argument>
         </arguments>
@@ -293,7 +321,11 @@ if(state == deadCorpse) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(global.playerWon)room_goto_next()
+            <string>if(global.playerWon&amp;&amp;other.touchedByPlayerDuration&gt;=other.nextLevelRequiredDuration)
+{
+vsp=-50;
+goingToNextLevel=true;
+}
 </string>
           </argument>
         </arguments>
@@ -392,7 +424,7 @@ if(image_index &lt; firstFrame) {
 }
 
 //show_debug_message("state: " + string(state));
-draw_sprite_ext(sPlayer,image_index,x,y,xscale,1,imageRotation,c_white,1);
+draw_sprite_ext(sprite_index,image_index,x,y,xscale,1,imageRotation,c_white,1);
 </string>
           </argument>
         </arguments>

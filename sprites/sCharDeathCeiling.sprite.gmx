@@ -29,5 +29,12 @@
     <frame index="6">images\sCharDeathCeiling_6.png</frame>
     <frame index="7">images\sCharDeathCeiling_7.png</frame>
     <frame index="8">images\sCharDeathCeiling_8.png</frame>
+    <frame index="9">images\sCharDeathCeiling_9.png</frame>
+    <frame index="10">images\sCharDeathCeiling_10.png</frame>
+    <frame index="11">images\sCharDeathCeiling_11.png</frame>
+    <frame index="12">images\sCharDeathCeiling_12.png</frame>
+    <frame index="13">images\sCharDeathCeiling_13.png</frame>
+    <frame index="14">images\sCharDeathCeiling_14.png</frame>
+    <frame index="15">images\sCharDeathCeiling_15.png</frame>
   </frames>
 </sprite>

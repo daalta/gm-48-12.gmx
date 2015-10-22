@@ -37,11 +37,15 @@
     <sound>sound\explosiongegner</sound>
     <sound>sound\sound9</sound>
     <sound>sound\musicTransition</sound>
+    <sound>sound\soundSpring</sound>
+    <sound>sound\music80s</sound>
+    <sound>sound\musicTitle</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sPlatformNormal</sprite>
     <sprite>sprites\sPlatformJump</sprite>
     <sprite>sprites\sPlayer</sprite>
+    <sprite>sprites\sPlayerBackup</sprite>
     <sprite>sprites\sLaunch</sprite>
     <sprite>sprites\sEnemyBasic</sprite>
     <sprite>sprites\sEnemyBasic2</sprite>
@@ -68,6 +72,7 @@
     <sprite>sprites\sYou</sprite>
     <sprite>sprites\sSpace</sprite>
     <sprite>sprites\sLastLevelBox</sprite>
+    <sprite>sprites\sHalo</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgMainMenu</background>
@@ -147,6 +152,7 @@
     <object>objects\oYou</object>
     <object>objects\oSpaceHere</object>
     <object>objects\oLastLevelBox</object>
+    <object>objects\oHalo</object>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\timelineIntro</timeline>
@@ -159,6 +165,7 @@
     <room>rooms\rTut2</room>
     <room>rooms\rTut3</room>
     <room>rooms\rTut4</room>
+    <room>rooms\rTut5</room>
     <room>rooms\rTransition</room>
     <room>rooms\rLevel1</room>
     <room>rooms\rLevel2</room>
@@ -168,7 +175,7 @@
     <room>rooms\rCredits2</room>
     <room>rooms\rLevelDefault</room>
   </rooms>
-  <constants number="16">
+  <constants number="17">
     <constant name="LAUNCHSPEED">-14</constant>
     <constant name="KEYLEFT">vk_left</constant>
     <constant name="KEYRIGHT">vk_right</constant>
@@ -185,6 +192,7 @@
     <constant name="ENEMY_ID_BASIC_3">7</constant>
     <constant name="ENEMY_ID_HELMET_3">8</constant>
     <constant name="ENEMY_ID_HEAVY_3">9</constant>
+    <constant name="SLEEP_PLAYERDEATH">10</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

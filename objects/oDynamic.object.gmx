@@ -34,6 +34,7 @@ dead=3;
 deadCeiling=4;
 deadEnemy=5;
 deadCorpse=6;
+goingToNextLevel=false;
 </string>
           </argument>
         </arguments>
@@ -161,7 +162,7 @@ vsp += GRAVITY;
             <string>///collisions with static objects
 
 //horizontal collisions
-if(place_meeting(x+hsp,y,oStatic))
+if(place_meeting(x+hsp,y,oStatic)&amp;&amp;!goingToNextLevel)
 {
     //bounce horizontally from walls.
     if(state=moving|| (place_meeting(x+hsp,y,oWall) &amp;&amp; state == falling) )state=idle;
@@ -177,14 +178,18 @@ if(place_meeting(x+hsp,y,oStatic))
 x+=hsp;
 
 //vertical collisions
-if(place_meeting(x,y+vsp,oStatic))
+if(place_meeting(x,y+vsp,oStatic)&amp;&amp;!goingToNextLevel)
 {
-    if(vsp&lt;0)state=deadCeiling;
+    if(vsp&lt;0)
+    {
+        state=deadCeiling;
+    }
 
     while(!place_meeting(x,y+sign(vsp),oStatic))
     {
         y+=sign(vsp);
     }
+        
     vsp=0;
     if(state=falling)state=moving;
 }
@@ -211,13 +216,40 @@ y+=vsp;
           <argument>
             <kind>1</kind>
             <string>///set state to dead when leaving screen
-if(y + sprite_height + 10 &lt; 0) {
+
+if((y + sprite_height + 10 &lt; 0)&amp;&amp;!goingToNextLevel) {
     //left Top
-    state = dead;
+    state = instance_destroy();
 }
 if(y - sprite_height - 10 &gt; room_height) {
     //left bottom
     state = deadCorpse;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///spin when midair and dead!
+
+if(state=deadCeiling&amp;&amp;(y!=yprevious))
+{
+    image_angle+=15;
 }
 </string>
           </argument>

@@ -41,6 +41,12 @@ ymm = 620;
 
 cooldown = 60;
 animation = 0;
+
+if(audio_is_playing(musicBoss))
+{
+    audio_stop_all();
+    audio_play_sound(music80s,0,1);
+} 
 </string>
           </argument>
         </arguments>
@@ -89,7 +95,9 @@ animation = 0;
             <string>///Check For MainMenu
 if(cooldown &lt;= 0) {
     if(keyboard_check(vk_space)) {
+        audio_stop_all();
         room_goto(rIntro);
+        
     }
 } else {
     cooldown--;

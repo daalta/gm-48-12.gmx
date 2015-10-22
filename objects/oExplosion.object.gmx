@@ -3,7 +3,7 @@
   <spriteName>sExplosion</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-1000</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -26,8 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>image_speed=0.50;
-scale=1;
-scaleDecreasePerFrame=0.08;
+scale=2;
+scaleDecreasePerFrame=0.16;
+
 </string>
           </argument>
         </arguments>

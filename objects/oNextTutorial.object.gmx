@@ -3,7 +3,7 @@
   <spriteName>sNextTutorial</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>1000</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -26,7 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>counter=0;
-
+image_speed=0.5;
+touchedByPlayerDuration=0;
+nextLevelRequiredDuration=7;
 </string>
           </argument>
         </arguments>
@@ -50,14 +52,26 @@
           <argument>
             <kind>1</kind>
             <string>image_angle=sin(counter)*10;
-counter+=2/pi;
+counter+=1/pi/20;
+
+if(!global.playerWon)
+{
+    image_index=0;
+}
+else if(image_index&lt;2)
+{
+    image_index=1;
+    counter+=1/pi;
+}else if (image_index&gt;=6) image_index=6;
+
+
 
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="0">
+    <event eventtype="4" ename="oPlayer">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -74,7 +88,27 @@ counter+=2/pi;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(global.playerWon)draw_self();
+            <string>if(global.playerWon)
+{   
+    if(touchedByPlayerDuration&gt;=nextLevelRequiredDuration)
+    {
+        if(!audio_is_playing(soundSpring))audio_play_sound(soundSpring,0,0);
+        
+        
+        image_angle=0;
+        if(image_index=0||image_index=1)
+        {
+            image_index++;
+            image_speed=0.5;
+            
+        }
+        if(image_index=6)
+        {
+            image_speed=0;
+        }
+    } else touchedByPlayerDuration++;
+    
+} else touchedByPlayerDuration=0;
 </string>
           </argument>
         </arguments>

@@ -74,14 +74,12 @@
     <instance objName="oPlatformNormal" x="928" y="672" name="inst_1D55FEA0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oPlatformJump" x="480" y="480" name="inst_83099A69" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oPlatformNormal" x="256" y="224" name="inst_5FC6C7D8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oPlatformJump" x="576" y="224" name="inst_720D327A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oPlatformJump" x="32" y="96" name="inst_DE4B116C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oPlatformJump" x="1088" y="96" name="inst_DC736BDE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oPlatformJump" x="928" y="96" name="inst_6D8D5DBC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oPlatformJump" x="32" y="352" name="inst_E54615AF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oPlatformNormal" x="896" y="224" name="inst_1732E5DC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oPlatformNormal" x="768" y="352" name="inst_401D8504" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oPlatformNormal" x="192" y="352" name="inst_4E853599" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oPlatformNormal" x="32" y="352" name="inst_4E853599" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oPlatformJump" x="32" y="608" name="inst_F0A727DB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oPlatformJump" x="224" y="672" name="inst_2E72DE5B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oPlatformNormal" x="-96" y="672" name="inst_5B1FAFBB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -96,6 +94,9 @@
     <instance objName="oPlatformNormal" x="544" y="672" name="inst_CDCB313A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oPlatformNormal" x="864" y="672" name="inst_5D1CEFA1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oPlatformJump" x="928" y="352" name="inst_5A0B0BFB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oPlatformJump" x="192" y="352" name="inst_B3DF4A06" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oPlatformNormal" x="896" y="224" name="inst_4DA668F6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oPlatformNormal" x="576" y="224" name="inst_1EA43082" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

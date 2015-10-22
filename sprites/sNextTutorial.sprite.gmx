@@ -2,14 +2,14 @@
 <sprite>
   <type>0</type>
   <xorig>64</xorig>
-  <yorigin>64</yorigin>
+  <yorigin>128</yorigin>
   <colkind>1</colkind>
   <coltolerance>0</coltolerance>
   <sepmasks>0</sepmasks>
-  <bboxmode>0</bboxmode>
-  <bbox_left>0</bbox_left>
-  <bbox_right>127</bbox_right>
-  <bbox_top>0</bbox_top>
+  <bboxmode>2</bboxmode>
+  <bbox_left>60</bbox_left>
+  <bbox_right>65</bbox_right>
+  <bbox_top>23</bbox_top>
   <bbox_bottom>127</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
@@ -27,7 +27,5 @@
     <frame index="4">images\sNextTutorial_4.png</frame>
     <frame index="5">images\sNextTutorial_5.png</frame>
     <frame index="6">images\sNextTutorial_6.png</frame>
-    <frame index="7">images\sNextTutorial_7.png</frame>
-    <frame index="8">images\sNextTutorial_8.png</frame>
   </frames>
 </sprite>
