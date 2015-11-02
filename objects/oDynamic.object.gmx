@@ -217,10 +217,6 @@ y+=vsp;
             <kind>1</kind>
             <string>///set state to dead when leaving screen
 
-if((y + sprite_height + 10 &lt; 0)&amp;&amp;!goingToNextLevel) {
-    //left Top
-    state = instance_destroy();
-}
 if(y - sprite_height - 10 &gt; room_height) {
     //left bottom
     state = deadCorpse;

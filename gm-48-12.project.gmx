@@ -68,11 +68,13 @@
     <sprite>sprites\sCharDeathCeiling</sprite>
     <sprite>sprites\sPlatformCracks</sprite>
     <sprite>sprites\sNextTutorial</sprite>
+    <sprite>sprites\sExclamation</sprite>
     <sprite>sprites\sIncoming</sprite>
     <sprite>sprites\sYou</sprite>
     <sprite>sprites\sSpace</sprite>
     <sprite>sprites\sLastLevelBox</sprite>
     <sprite>sprites\sHalo</sprite>
+    <sprite>sprites\sScoreKeeper</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgMainMenu</background>
@@ -153,6 +155,8 @@
     <object>objects\oSpaceHere</object>
     <object>objects\oLastLevelBox</object>
     <object>objects\oHalo</object>
+    <object>objects\oScoreKeeper</object>
+    <object>objects\oExclamation</object>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\timelineIntro</timeline>
@@ -172,6 +176,8 @@
     <room>rooms\rLevel3</room>
     <room>rooms\rLevel4</room>
     <room>rooms\rLevel5</room>
+    <room>rooms\rLevel6</room>
+    <room>rooms\rLevel8</room>
     <room>rooms\rCredits2</room>
     <room>rooms\rLevelDefault</room>
   </rooms>
