@@ -32,6 +32,7 @@ spaceDownTimer = spaceDownTimerMax;
 
 //View Speed
 xViewSpeed=0;
+xViewAccel=0;
 </string>
           </argument>
         </arguments>
@@ -133,7 +134,8 @@ xViewSpeed=0;
           <argument>
             <kind>1</kind>
             <string>///Move Camera
-view_xview[0]+=xViewSpeed;
+xViewSpeed+=xViewAccel;
+view_xview[0]+=xViewSpeed
 </string>
           </argument>
         </arguments>

@@ -76,7 +76,7 @@ hp=5;
 image_blend=c_white;
 if (global.lunch)
 {
-    audio_play_sound(soundLaunch,0,0);
+    if !audio_is_playing(soundLaunch) audio_play_sound(soundLaunch,0,0);
     platState = platformState.launching;
     image_blend=c_aqua;
     instance_create(x+80, y, oLunch);

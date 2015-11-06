@@ -31,7 +31,7 @@ view_xview=-300;
     </event>
   </entry>
   <entry>
-    <step>155</step>
+    <step>145</step>
     <event>
       <action>
         <libid>1</libid>
@@ -61,7 +61,7 @@ view_xview=0;
     </event>
   </entry>
   <entry>
-    <step>310</step>
+    <step>298</step>
     <event>
       <action>
         <libid>1</libid>
@@ -92,7 +92,7 @@ view_xview=-400;
     </event>
   </entry>
   <entry>
-    <step>465</step>
+    <step>445</step>
     <event>
       <action>
         <libid>1</libid>
@@ -122,7 +122,7 @@ view_yview=0;
     </event>
   </entry>
   <entry>
-    <step>619</step>
+    <step>605</step>
     <event>
       <action>
         <libid>1</libid>
@@ -148,7 +148,7 @@ view_yview=0;
     </event>
   </entry>
   <entry>
-    <step>774</step>
+    <step>744</step>
     <event>
       <action>
         <libid>1</libid>
@@ -174,7 +174,7 @@ view_yview=0;
     </event>
   </entry>
   <entry>
-    <step>929</step>
+    <step>899</step>
     <event>
       <action>
         <libid>1</libid>
@@ -201,7 +201,7 @@ instance_create(864-128,352-128,oSpawner);
     </event>
   </entry>
   <entry>
-    <step>1084</step>
+    <step>1030</step>
     <event>
       <action>
         <libid>1</libid>
@@ -234,7 +234,7 @@ audio_play_sound(soundFart,0,0);
     </event>
   </entry>
   <entry>
-    <step>1265</step>
+    <step>1200</step>
     <event>
       <action>
         <libid>1</libid>
@@ -252,7 +252,12 @@ audio_play_sound(soundFart,0,0);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room_goto(rMainMenu);
+            <string>instance_create(0,0,oIntroTransitionTimer)
+xViewAccel=0.4;
+view_hview=720
+view_wview=1280
+view_yview=0
+view_xview=0;
 </string>
           </argument>
         </arguments>

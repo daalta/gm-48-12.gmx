@@ -40,6 +40,8 @@
     <sound>sound\soundSpring</sound>
     <sound>sound\music80s</sound>
     <sound>sound\musicTitle</sound>
+    <sound>sound\musicTitleTrans</sound>
+    <sound>sound\soundStartGame</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sPlatformNormal</sprite>
@@ -75,6 +77,7 @@
     <sprite>sprites\sLastLevelBox</sprite>
     <sprite>sprites\sHalo</sprite>
     <sprite>sprites\sScoreKeeper</sprite>
+    <sprite>sprites\sScreenButton</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgMainMenu</background>
@@ -110,6 +113,7 @@
       <object>objects\oScoreWidget</object>
       <object>objects\oLivesWidget</object>
       <object>objects\oCredits</object>
+      <object>objects\oIntroTransitionTimer</object>
     </objects>
     <objects name="Dynamic">
       <object>objects\oDynamic</object>

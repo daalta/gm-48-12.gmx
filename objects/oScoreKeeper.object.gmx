@@ -62,7 +62,7 @@ go=false;
             <kind>1</kind>
             <string>///check room ... timer go?
 
-if(room=rTut1)
+if(room==rTut1)
 {
     if(!go)
     {
@@ -75,7 +75,7 @@ if(room=rTut1)
    
 }
 
-if(room=rCredits||room=rCredits2)
+if(room=rCredits||room=rCredits2||room=rMainMenu)
 {
     go=false;
 }

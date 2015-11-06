@@ -36,6 +36,11 @@ imageSpeed = 0.3;
 
 xPos = room_width / 2 + 352;
 yPos = 500;
+
+fadeAlpha = 1;
+fadeAlphaChangeRate=0.037;
+increaseFadeAlpha=true;
+
 </string>
           </argument>
         </arguments>
@@ -158,6 +163,53 @@ background_yscale[4]=2;
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///fade to black
+
+if(increaseFadeAlpha)
+{
+    if(fadeAlpha&gt;0) 
+    {
+        fadeAlpha-=fadeAlphaChangeRate;
+    } 
+}
+else
+{
+    fadeAlpha+=fadeAlphaChangeRate;
+    if(fadeAlpha&gt;=1)
+    {
+        room_goto_next();
+        audio_play_sound(musicTutorial,0,1);
+    }
+}
+
+if(!increaseFadeAlpha&amp;&amp;!audio_is_playing(soundStartGame))
+{
+    audio_play_sound(soundStartGame,0,0)
+}
+
+draw_set_alpha(fadeAlpha);
+draw_rectangle_color( 0,0, room_width, room_height, c_black, c_black, c_black, c_black, false);
+draw_set_alpha(1.0);
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="9" enumb="40">
       <action>
@@ -237,8 +289,7 @@ switch(currentButton)
 
 
     audio_stop_all()
-    audio_play_sound(musicTutorial,0,1);
-    room_goto_next()
+    increaseFadeAlpha=false;
     break;
     case 1:
         game_end();
@@ -297,8 +348,7 @@ switch(currentButton)
 
 
     audio_stop_all()
-    audio_play_sound(musicTutorial,0,1);
-    room_goto_next()
+    increaseFadeAlpha=false;
     break;
     case 1:
         game_end();

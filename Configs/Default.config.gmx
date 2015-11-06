@@ -19,7 +19,7 @@
     <option_android_arch_mipsr2>false</option_android_arch_mipsr2>
     <option_android_arch_mipsr2sf>false</option_android_arch_mipsr2sf>
     <option_android_arch_x86>True</option_android_arch_x86>
-    <option_android_build_version>3</option_android_build_version>
+    <option_android_build_version>4</option_android_build_version>
     <option_android_color_depth>0</option_android_color_depth>
     <option_android_display_name>BrainJunk</option_android_display_name>
     <option_android_google_analytics_enable>false</option_android_google_analytics_enable>
@@ -80,7 +80,7 @@
     <option_freeze>false</option_freeze>
     <option_frequency>0</option_frequency>
     <option_frontimage>nil</option_frontimage>
-    <option_fullscreen>True</option_fullscreen>
+    <option_fullscreen>False</option_fullscreen>
     <option_gameguid>{448039EC-7204-4791-AF84-537477FB1E80}</option_gameguid>
     <option_gameid>679843347</option_gameid>
     <option_haptic_effects>0</option_haptic_effects>
@@ -272,7 +272,7 @@
     <option_screenkey>True</option_screenkey>
     <option_screenshotkey>true</option_screenshotkey>
     <option_shortcircuit>True</option_shortcircuit>
-    <option_showcursor>False</option_showcursor>
+    <option_showcursor>True</option_showcursor>
     <option_showprogress>1</option_showprogress>
     <option_sizeable>False</option_sizeable>
     <option_stayontop>false</option_stayontop>
@@ -351,7 +351,7 @@
     <option_win8_texture_page>1024</option_win8_texture_page>
     <option_win8_wide_logo>Configs\Default\Windows8\logos\logo310.png</option_win8_wide_logo>
     <option_windowcolor>clBlack</option_windowcolor>
-    <option_windows_build_version>11</option_windows_build_version>
+    <option_windows_build_version>12</option_windows_build_version>
     <option_windows_company_info>Jonas, Daniel und Felix</option_windows_company_info>
     <option_windows_copyright_info></option_windows_copyright_info>
     <option_windows_description_info>made for gm(48)</option_windows_description_info>
